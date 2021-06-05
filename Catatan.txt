@@ -1,0 +1,22 @@
+Auth
+    Dashboard
+        10 Count *
+    Profile
+        7 View
+        8 Foto
+    Dosen
+        1 Datatable //
+        9 Foto
+    Mahasiswa
+        2 Jurusan //
+    Pembimbing
+        3 CRUD //
+    Pengaturan
+        4 Footer
+        5 Header Title
+        6 Nav Prodi di halaman utama
+
+11 Halaman Utama
+12 implementasikan pengaturan
+Mahasiswa buat media dan part sama dengan auth
+Dosen buat media dan part sama dengan auth
