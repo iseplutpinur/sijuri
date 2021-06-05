@@ -126,13 +126,41 @@ if (!isset($_GET['action'])) {
         $icon = '<i class="pe-7s-note"></i>';
         $title = 'Tambah pembimbing';
         $main_content = "module/pembimbing/tambah-pembimbing.php";
-    } elseif ($_GET['action'] == "edit-pembimbing") {
+    }
+
+    // Pengaturan
+    elseif ($_GET['action'] == "pengaturan") {
         $icon = '<i class="pe-7s-note"></i>';
-        $title = 'Edit pembimbing';
-        $main_content = "module/pembimbing/edit-pembimbing.php";
+        $title = 'Pengaturan';
+        $main_content = "module/pengaturan/data-pengaturan.php";
+    } elseif ($_GET['action'] == "tambah-pembimbing") {
+        $icon = '<i class="pe-7s-note"></i>';
+        $title = 'Tambah pembimbing';
+        $main_content = "module/pembimbing/tambah-pembimbing.php";
     }
 }
 
+// menyiapkan footer dan header
+// header
+$header_title = "SIJURI Kelompok 5"; // default
+$footer_title = 'SIJURI © 2021 Kelompok 5, All Rights Reserved.';
+$result =  mysqli_query($connect, "SELECT isi FROM tbl_pengaturan WHERE nama='header'");
+if ($result->num_rows > 0) {
+    while ($row = mysqli_fetch_array($result)) {
+        $header_title = $row['isi'];
+    }
+} else {
+    $result =  mysqli_query($connect, "INSERT INTO tbl_pengaturan (id, nama, isi, keterangan) VALUES (NULL, 'header', '$header_title', 'Mengatur Nama Aplikasi')");
+}
+
+$result =  mysqli_query($connect, "SELECT isi FROM tbl_pengaturan WHERE nama='footer'");
+if ($result->num_rows > 0) {
+    while ($row = mysqli_fetch_array($result)) {
+        $footer_title = $row['isi'];
+    }
+} else {
+    $result =  mysqli_query($connect, "INSERT INTO tbl_pengaturan (id, nama, isi, keterangan) VALUES (NULL, 'footer','$footer_title' , 'Mengatur Footer Aplikasi')");
+}
 
 include('part/sidebar.php');
 

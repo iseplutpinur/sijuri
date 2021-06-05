@@ -12,9 +12,9 @@ Auth
     Pembimbing
         3 CRUD //
     Pengaturan
-        4 Footer
-        5 Header Title
         6 Nav Prodi di halaman utama
+        4 Footer
+        5 Header
 
 11 Halaman Utama
 12 implementasikan pengaturan

@@ -58,7 +58,7 @@
                         <p>Informasi</p>
                     </a>
                 </li>
-                <li <?= in_array($title, ['pengaturan']) ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Pengaturan']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=pengaturan">
                         <i class="pe-7s-tools"></i>
                         <p>Pengaturan</p>
