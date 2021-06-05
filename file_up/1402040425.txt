@@ -1,0 +1,143 @@
+Sekolah:
+
+1. Dashboard
+ - Judul dibuat BOLD dan ukuran nya lebih besar warna item [Sudah]
+ - RM dan RP warna item tidak bold [Sudah]
+ - Total RAB = Jumlah RAB [Sudah]
+ - Total Realisasi = Total Realisasi Anggaran [Sudah]
+ - Total Sisa Realisasi = Sisa Realisasi [Sudah]
+ - Profil Data = Profil Sekolah [Sudah]
+ - Ubah = Update [Sudah]
+ - Nama = Nama CLC [Sudah]
+ - No. Telpon = No. Telpon Pengelola [Sudah]
+ - Alamat = Alamat CLC [Sudah]
+ - Kelas 7 = Siswa Kelas 7 [Sudah]
+ - Kelas 8 = Siswa Kelas 8 [Sudah]
+ - Kelas 9 = Siswa Kelas 9 [Sudah]
+ - Jumlah Siswa = Jumlah Siswa Keseluruhan [Sudah]
+ - Guru Bina = Jumlah Guru Binad [Sudah]
+ - Guru Pamong = Jumlah Guru Pamong [Sudah]
+ - Jumlah Guru = Jumlah Guru Keseluruhan [Sudah]
+ - memasunusiakan manusia = Memanusiakan Manusia Membangun Peradaban [Sudah]
+ - tambahan = Footer > Design By SIKK [sudah]
+
+2. RAB - Cabang
+ sub menu RAB - Cabang diganti jadi RAB - CLC [Sudah]
+ Tabel
+ - Title dibuat BOLD [Sudah]
+ - RAB CLC SMP 6 Cimahi - (Status: Proses) [Sudah]
+ - Aktifitas dihilangkan [Sudah]
+ - Kode Sub Aktifitas = Kode Standar [Sudah]
+ - Nama Sub Aktifitas = Uraian [Sudah]
+ - Prioritas dihilangkan [Sudah]
+ - Ringgit = Harga (RM) [Sudah]
+ - Rupiah = Harga (Rp) [Sudah]
+ - Total Ringgit = Jumlah (RM) [Sudah]
+ - Total Rupiah = Jumlah (Rp) [Sudah]
+ - ditambah column keterangan -11.07 29/05/2021 [sudah]
+ - Aksi = Edit Data [Sudah]
+
+ Tambah
+ - Tambah Aktifitas = Tambah Data [Sudah]
+ - Aktifitas = Kode Standar [Sudah]
+ - Sub Aktifitas = Sub Standar [Sudah]
+ - Harga Ringgit = Harga (RM) [Sudah]
+ - Harga RUpiah = Harga (Rp) [Sudah]
+ - Total Ringgit = Jumlah (RM) [Sudah]
+ - Total Rupiah = Jumlah (Rp) [Sudah]
+ - Prioritas = dihilangkan [Sudah]
+ - ditambah inputan keterangan (boleh kosong) [Sudah]
+ - NPSN dropdown diubah menjadi Label Informasi saja [Sudah]
+
+3. RAB - Preview
+ sub menu RAB - Preview diganti jadi RAB - Preview RAB [Sudah]
+ - Title dibuat BOLD [Sudah]
+ - RAB Preview CLC - SMP 6 Cimahi - (Status: Proses) [Sudah]
+ - PDF : Judul Besar >   ----------------------- [sudah]
+	Rencana Anggaran Biaya (RAB)
+	Bantuan Operasional CLC Jenjang Sekolah Menengah Pertama (SMP)
+	Tahun 2021
+	footer > ngambil format dari yang sebelumnya
+ TABEL
+ - Kode Sub Aktifitas = Kode Standar [Sudah]
+ - Nama Sub Aktifitas = Uraian [Sudah]
+ - Prioritas dihilangkan [Sudah]
+ - Ringgit = Harga (RM) [Sudah]
+ - Rupiah = Harga (Rp) [Sudah]
+ - Total Ringgit = Jumlah (RM)
+ - Total Rupiah = Jumlah (Rp) [Sudah]
+ - keterangan dihilangkan  [Sudah]
+ - Button PDF dihilangkan [Sudah]
+ 
+
+4. Pengaturan - Format PDF / Excel
+ - Nama Sekolah
+ - Kota
+ - Alamat 
+
+5. Realisasi - Data
+ - Sub Menu Realisasi - Data diganti jadi Realisasi - RAB [Sudah]
+ - cetak excel dihilangkan [Sudah]
+ - Realisasi RAB - NPSN (Nama CLC) [Sudah]
+ TABEL
+ - Kode = Kode Standar [Sudah]
+ - No. Urut -> field ditambahkan mengikuti proses input realisasi penomeran nya   -----------------------
+ - Tanggal  -----------------------
+ - Uraian  -----------------------
+ - Total Ringgit = Anggaran RAB (RM) [Sudah]
+ - Total Rupiah = Anggaran RAB (Rp) [Sudah]
+ - Realisasi Ringgit = Harga Real (RM) [Sudah]
+ - Realisasi Rupiah = Harga Real (Rp) [Sudah]
+ - Sisa Ringgit = Selisih (RM) [Sudah]
+ - Sisa Rupiah = Selisih (Rp) [Sudah]
+ - isi Status = Sudah Direalisasikan / Belum Direalisasikan [Sudah]
+ FORM
+ - Belanja = Form Realisasi (ditulis ditengah) [Sudah]
+ - NPSN dihilangkan [Sudah]
+ - Kode = Kode Standar [Sudah]
+ - Nama = Uraian [Sudah]
+ - Total Ringgit = Anggaran RAB (RM) [Sudah]
+ - Total Rupiah = Anggaran RAB (Rp) [Sudah]
+ - Nama =  Dibayarkan kepada Logitech SDN BHD untuk pembelian Tinta Printer  -----------------------
+ - Harga Ringgit = Harga Real (RM) [Sudah]
+ - Harga Rupiah = Harga Real (Rp) [Sudah]
+ - Gambar = Photo Resit / Nota / Kwitansi [Sudah]
+
+6. Realisasi Dana Sisa
+ FORM
+ - Tambahkan Dana Sisa = Form Pengalihan Dana Sisa [Sudah]
+ - NPSN dihilangkan  [Sudah]
+ - Opsi Tambahan Sisa Dana = Kategori Pengalihan [sudah]
+  isi > 
+	Item Pada RAB
+	Item Baru 
+ - Aktifitas = Kode Standar
+ - Total Ringgit = Anggaran RAB (RM)
+ - Total Rupiah = Anggaran RAB (Rp)
+ - Jumlah Dana Sisa Ringgit Ditambahkan = Total Dana Sisa (RM)
+ - Jumlah Dana Sisa Rupiah Ditambahkan = Total Dana Sisa (Rp) 
+ TABEL
+ - Total Ringgit = Anggaran RAB (RM) [Sudah]
+ - Total Rupiah = Anggaran RAB (Rp) [Sudah]
+ - Realisasi Ringgit = Harga Real (RM) [Sudah]
+ - Realisasi Rupiah = Harga Real (Rp) [Sudah]
+ - Sisa Ringgit = Selisih (RM) [Sudah]
+ - Sisa Rupiah = Selisih (Rp) [Sudah]
+ - tambah dihilangkan [sudah]
+ - ditambah kolom centang   -----------------------
+ *Mekanisme penambahan dana sisa dibuat bisa dipilih melalui centang dan angka nya di akumulatifkan  -----------------------
+
+7. Realisasi Dana Kurang  -----------------------
+ * sebelum mengambil dari item rab, default nya ngambil dana dari dana realisasi sisa jika tidak ada maka ngambil dari item rab yang sudah disetting
+
+8. Laporan  -----------------------
+ * kode standar yang dimunculkan hanya 2 digit (contoh: 3.1 / 4.2 / 7.1 / 7.2) artinya akan dikalkulasikan kode dibawah nya
+ - laporan standar, no urut dimunculkan
+ 
+Tambahan Laporan
+(file ada di group wa)
+
+
+
+
+

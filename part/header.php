@@ -30,12 +30,8 @@
         <a class="navbar-brand" href="<?php echo $config['base_url'] ?>" style="color:#fff;font-family: 'Lato'; font-weight:bold;font-size:18px"><i class="fa fa-home"></i> Home</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="index.php?action=semua-judul" style="color:#fff"><i class="fa fa-folder-open-o"></i> Semua Judul</a></li>
-          <li><a href="index.php?action=kearsipan-digital" style="color:#fff"><i class="fa fa-folder-open-o"></i> Kearsipan Digital</a></li>
-          <li><a href="index.php?action=bisnis-logistik" style="color:#fff"><i class="fa fa-folder-open-o"></i> Bisnis Logistik</a></li>
-          <li><a href="index.php?action=antropologi" style="color:#fff"><i class="fa fa-folder-open-o"></i> Antropologi </a></li>
-          <li><a href="index.php?action=hubungan-internasional" style="color:#fff"><i class="fa fa-folder-open-o"></i> Hubungan Internasional</a></li>
+        <ul class="nav navbar-nav" id="main-navbar">
+          <li><a href="index.php?action=judul&kode_jurusan=all" style="color:#fff"><i class="fa fa-folder-open-o"></i> Semua Judul</a></li>
         </ul>
       </div>
     </div>

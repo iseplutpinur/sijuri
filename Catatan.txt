@@ -12,11 +12,14 @@ Auth
     Pembimbing
         3 CRUD //
     Pengaturan
-        6 Nav Prodi di halaman utama
-        4 Footer
-        5 Header
+        6 Nav Prodi di halaman utama //
+        4 Footer //
+        5 Header //
 
 11 Halaman Utama
+    1 navigasi //
+    2 View //
+
 12 implementasikan pengaturan
 Mahasiswa buat media dan part sama dengan auth
 Dosen buat media dan part sama dengan auth
