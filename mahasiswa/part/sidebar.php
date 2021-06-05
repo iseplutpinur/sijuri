@@ -7,25 +7,25 @@
             </div>
 
             <ul class="nav">
-                <li <?= ($sb_active == 'dashboard') ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Dashboard']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=dashboard">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li <?= ($sb_active == 'profile-mahasiswa') ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Profile Mahasiswa']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=profile-mahasiswa">
                         <i class="pe-7s-user"></i>
                         <p>Profile Mahasiswa</p>
                     </a>
                 </li>
-                <li <?= ($sb_active == 'judul-skripsi') ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Judul Skripsi', 'Edit Judul 1', 'Edit Judul 2', 'Ajukan Judul']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=judul-skripsi">
                         <i class="pe-7s-note2"></i>
                         <p>Judul Saya</p>
                     </a>
                 </li>
-                <li <?= ($sb_active == 'dosen-pembimbing') ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Dosen Pembimbing']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=dosen-pembimbing">
                         <i class="pe-7s-users"></i>
                         <p>Daftar Pembimbing </p>

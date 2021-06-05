@@ -17,16 +17,13 @@ include('../library/config.php');
 /* end get config */
 include('part/header.php');
 
-
-$sb_active = isset($_GET['action']) ? $_GET['action'] : 'dashboard';
-include('part/sidebar.php');
-
 $title = "";
 $main_content = "";
 $icon = "";
 
 // set judul navigasi dia atas dan content file
 if (!isset($_GET['action'])) {
+    // Dashboard
     $icon = '<i class="pe-7s-graph"></i> ';
     $title = 'Dashboard';
     $main_content = "module/dashboard.php";
@@ -34,11 +31,15 @@ if (!isset($_GET['action'])) {
     $icon = '<i class="pe-7s-graph"></i> ';
     $title = 'Dashboard';
     $main_content = "module/dashboard.php";
-} elseif ($_GET['action'] == "profile-mahasiswa") {
+}
+// Mahasiswa
+elseif ($_GET['action'] == "profile-mahasiswa") {
     $icon = '<i class="pe-7s-user"></i> ';
     $title = 'Profile Mahasiswa';
     $main_content = "module/profile.php";
-} elseif ($_GET['action'] == "judul-skripsi") {
+}
+// Judul Skripsi
+elseif ($_GET['action'] == "judul-skripsi") {
     $icon = '<i class="pe-7s-note2"></i> ';
     $title = 'Judul Skripsi';
     $main_content = "module/judul-skripsi.php";
@@ -54,12 +55,33 @@ if (!isset($_GET['action'])) {
     $icon = '<i class="pe-7s-note2"></i> ';
     $title = 'Ajukan Judul';
     $main_content = "module/ajukan-judul.php";
-} elseif ($_GET['action'] == "dosen-pembimbing") {
+}
+// Dosen Pembimbing
+elseif ($_GET['action'] == "dosen-pembimbing") {
     $icon = '<i class="pe-7s-users"></i> ';
     $title = 'Dosen Pembimbing';
     $main_content = "module/dosen-pembimbing.php";
 }
 
+// menyiapkan footer dan header
+// header
+$header_title = "SIJURI Kelompok 5"; // default
+$footer_title = 'SIJURI © 2021 Kelompok 5, All Rights Reserved.';
+$result =  mysqli_query($connect, "SELECT isi FROM tbl_pengaturan WHERE nama='header'");
+if ($result->num_rows > 0) {
+    while ($row = mysqli_fetch_array($result)) {
+        $header_title = $row['isi'];
+    }
+}
+
+$result =  mysqli_query($connect, "SELECT isi FROM tbl_pengaturan WHERE nama='footer'");
+if ($result->num_rows > 0) {
+    while ($row = mysqli_fetch_array($result)) {
+        $footer_title = $row['isi'];
+    }
+}
+// sidebar
+include('part/sidebar.php');
 // ambil navbar
 include('part/navbar.php');
 

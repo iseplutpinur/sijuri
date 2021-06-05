@@ -46,6 +46,10 @@
             overflow: hidden;
             position: relative;
         }
+
+        body {
+            font-family: sans-serif;
+        }
     </style>
 </head>
 

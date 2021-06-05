@@ -1,14 +1,6 @@
 		<?php
 		//include config
 		include_once('../library/config.php');
-
-		if ($_SESSION['prodi'] == '0205') {
-			$prodi = '1';
-		} elseif ($_SESSION['prodi'] == '0204') {
-			$prodi = '2';
-		} else {
-			$prodi = '0';
-		}
 		?>
 		<div class="content">
 			<div class="container-fluid">
@@ -23,9 +15,6 @@
 											<div class="row">
 
 												<div class="col-lg-6">
-													<input type="hidden" name="nim" value="<?php echo $_SESSION['nim'] ?>">
-													<input type="hidden" name="mahasiswa" value="<?php echo $_SESSION['nama_mhs'] ?>">
-													<input type="hidden" name="prodi" value="<?php echo $prodi ?>">
 													<div class="form-group">
 														<label for="judul">Judul Skripsi 1</label>
 														<input type="text" name="judul1" class="form-control" placeholder="Masukan Judul Skripsi Anda." required>
@@ -37,10 +26,13 @@
 													<div class="form-group">
 														<label for="sel1">Pilihan Pembimbing 1:</label>
 														<select class="form-control" name='pembimbing1' required>
-															<?php $i = 0;
-															foreach ($kPembimbing1 as $p) {
-																echo "<option value='$i'>$p</option>";
-																$i++;
+															<?php
+															$query = "SELECT tbl_pembimbing.id, tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '1'";
+															$result =  mysqli_query($connect, $query);
+															if ($result) {
+																while ($row = mysqli_fetch_array($result)) {
+																	echo "<option value=" . $row['nip'] . ">" . $row['nama_dosen'] . "</option>";
+																}
 															}
 															?>
 														</select>
@@ -59,9 +51,12 @@
 														<label for="sel1">Pilihan Pembimbing 2:</label>
 														<select class="form-control" name='pembimbing2' required>
 															<?php $i = 0;
-															foreach ($kPembimbing2 as $p) {
-																echo "<option value='$i'>$p</option>";
-																$i++;
+															$query = "SELECT tbl_pembimbing.id, tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '2'";
+															$result =  mysqli_query($connect, $query);
+															if ($result) {
+																while ($row = mysqli_fetch_array($result)) {
+																	echo "<option value=" . $row['nip'] . ">" . $row['nama_dosen'] . "</option>";
+																}
 															}
 															?>
 														</select>
@@ -99,8 +94,8 @@
 											</div>
 											<button type="submit" class="btn btn-info btn-fill pull-right">Simpan Data</button>
 											<a href="media.php?action=judul-skripsi" class="btn btn-danger btn-fill pull-right" style="margin-right:5px">Batal</a>
+										</form>
 									</div>
-									</form>
 								</div>
 							</div>
 						</div>

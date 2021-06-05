@@ -37,25 +37,25 @@ if ($_SESSION['nim'] == true) {
 	}
 
 	// simpan data
-	$nim = $_POST['nim'];
-	$mahasiswa = $_POST['mahasiswa'];
+	$nim = $_SESSION['nim'];
+	$mahasiswa = $_SESSION['nama_mhs'];
+	$prodi = $_SESSION['prodi'];
 	$judul1 = $_POST['judul1'];
 	$desjudul1 = $_POST['desjudul1'];
 	$status_judul1 = 0;
 	$judul2 = $_POST['judul2'];
 	$desjudul2 = $_POST['desjudul2'];
 	$status_judul2 = 0;
-	$prodi = $_POST['prodi'];
 	$kelas = $_POST['kelas'];
 	$pembimbing1 = $_POST['pembimbing1'];
 	$pembimbing2 = $_POST['pembimbing2'];
-
-	$query = mysqli_query($connect, "INSERT INTO `skripsi` (`nim`, `judul1`, `desjudul1`, `judul2`, `desjudul2`, `status_judul1`, `status_judul2`, `prodi`, `kelas`, `mahasiswa`, `pembimbing1`, `pembimbing2`, `file_url`) VALUES ('$nim', '$judul1', '$desjudul1', '$judul2', '$desjudul2', '$status_judul1', '$status_judul2', '$prodi', '$kelas', '$mahasiswa', '$pembimbing1', '$pembimbing2', '$n_file')");
+	$query = "INSERT INTO skripsi (nim, judul1, desjudul1, judul2, desjudul2, status_judul1, status_judul2, prodi, kelas, mahasiswa, pembimbing1, pembimbing2, file_url) VALUES ('$nim', '$judul1', '$desjudul1', '$judul2', '$desjudul2', '$status_judul1', '$status_judul2', '$prodi', '$kelas', '$mahasiswa', '$pembimbing1', '$pembimbing2', '$n_file')";
+	$query = mysqli_query($connect, $query);
 
 	if ($query) {
-		header('Location:../media.php?action=dashboard');
+		header('Location:../media.php?action=ajukan-judul');
 	} else {
-		header('Location:../media.php?action=dashboard');
+		header('Location:../media.php?action=ajukan-judul	');
 	}
 } else {
 	header('Location:media.php?action=ajukan-judul');

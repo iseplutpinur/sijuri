@@ -79,7 +79,7 @@ if ($status2 == '0') {
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading" style="color: #fff;background-color: #0f8870;border-color:#0f8870;font-family: 'sans-serif'; font-weight:bold;font-size:35px">
-            <h3 class="panel-title"><i class="fa fa-bell"></i> <?php echo $judul ?> </h3>
+            <h3 class="panel-title" style="font-family:sans-serif""><i class=" fa fa-bell"></i> <?php echo $judul ?> </h3>
           </div>
           <div class="panel-body">
 
@@ -109,7 +109,7 @@ if ($status2 == '0') {
       <?php if (isset($register) == '') { ?>
         <div class="col-md-12">
           <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
-            <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
+            <div class="unwaha-padding panel-heading" style="color:#fff;background-color: #158873;border-color: #158873; font-family:sans-serif""> <i class=" pe-7s-note2"></i> Detail Pengajuan Judul</div>
             <div class="panel-body">
               <a href="media.php?action=ajukan-judul" class="btn btn-success"><i class="pe-7s-note2"></i> Ajukan Judul Baru</a>
             </div>

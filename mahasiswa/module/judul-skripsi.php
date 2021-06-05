@@ -79,9 +79,9 @@ while ($row = mysqli_fetch_array($result)) {
       <div class="col-md-12">
         <?php if (isset($register) == '') { ?>
           <div class="panel panel-success" style="box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);">
-            <div class="unwaha-padding panel-heading text-light" style="color:#fff;background-color: #158873;border-color: #158873;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
+            <div class="unwaha-padding panel-heading text-light" style="color:#fff;background-color: #158873;border-color: #158873; font-family: sans-serif;"> <i class="pe-7s-note2"></i> Detail Pengajuan Judul</div>
             <div class="panel-body">
-              <a href="media.php?action=ajukan-judul&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" class="btn btn-success"><i class="pe-7s-note2"></i> Ajukan Judul Baru</a>
+              <a href="media.php?action=ajukan-judul" class="btn btn-success"><i class="pe-7s-note2"></i> Ajukan Judul Baru</a>
             </div>
           </div>
         <?php } else { ?>
@@ -164,7 +164,7 @@ while ($row = mysqli_fetch_array($result)) {
                   </tbody>
                 </table>
               </div>
-              <a href="media.php?action=edit-judul1&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #fff;"><i class="pe-7s-config"></i> Ubah Data</a>
+              <a href="media.php?action=edit-judul1" type="button" class="btn btn-success" style="border-color: #158873;color: #fff;"><i class="pe-7s-config"></i> Ubah Data</a>
               <br>
               <br>
 
@@ -215,7 +215,7 @@ while ($row = mysqli_fetch_array($result)) {
                   </tbody>
                 </table>
               </div>
-              <a href="media.php?action=edit-judul2&token=<?php echo MD5(SHA1(MD5(SHA1($_SESSION['nim'])))) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #fff;"><i class="pe-7s-config"></i> Ubah Data</a>
+              <a href="media.php?action=edit-judul2" type="button" class="btn btn-success" style="border-color: #158873;color: #fff;"><i class="pe-7s-config"></i> Ubah Data</a>
 
               <br>
               <br>

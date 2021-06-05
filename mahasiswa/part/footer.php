@@ -4,7 +4,7 @@
 
                 </nav>
                 <p class="copyright pull-left">
-                    SIJURI &copy; 2021 Kelompok 5, All Rights Reserved.
+                    <?= $footer_title ?>
                 </p>
             </div>
         </footer>
@@ -42,7 +42,7 @@
             $(function() {
                 $("#data-alumni").dataTable();
             });
-            document.title = "<?= $title ?>";
+            document.title = "<?= $title . " | " . $header_title ?>";
         </script>
 
         </html>

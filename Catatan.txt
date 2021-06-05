@@ -23,3 +23,7 @@ Auth
 12 implementasikan pengaturan
 Mahasiswa buat media dan part sama dengan auth
 Dosen buat media dan part sama dengan auth
+
+Mahasiswa
+1. Daftar Pembimbing
+2. Judul
