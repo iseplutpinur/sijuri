@@ -79,7 +79,7 @@ if ($status2 == '0') {
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading" style="color: #fff;background-color: #0f8870;border-color:#0f8870;font-family: 'sans-serif'; font-weight:bold;font-size:35px">
-            <h3 class="panel-title" style="font-family:sans-serif""><i class=" fa fa-bell"></i> <?php echo $judul ?> </h3>
+            <h3 class="panel-title" style="font-family:sans-serif"><i class=" fa fa-bell"></i> <?php echo $judul ?> </h3>
           </div>
           <div class="panel-body">
 
@@ -159,15 +159,6 @@ if ($status2 == '0') {
                               echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>';
                             } ?></td>
                       </tr>
-                      <tr>
-                        <td>Dosen Pembimbing</td>
-                        <td><?php $i = 0;
-                            foreach ($kPembimbing1 as $pemb1) {
-                              if ($pembimbing1 == $i++)
-                                echo $pemb1;
-                            }
-                            ?></td>
-                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -210,21 +201,54 @@ if ($status2 == '0') {
                               echo '<div class="alert alert-danger" role="alert">Data Not Found.</div>';
                             } ?></td>
                       </tr>
-                      <tr>
-                        <td>Dosen Pembimbing</td>
-                        <td><?php $i = 0;
-                            foreach ($kPembimbing2 as $pemb2) {
-                              if ($pembimbing2 == $i++)
-                                echo $pemb2;
-                            }
-                            ?>
-                        </td>
-                      </tr>
                     </tbody>
                   </table>
+
                 </div>
               </div>
             </div>
+            <div class="container">
+              <div class="alert alert-info" role="alert" style="font-family:sans-serif;background-color:#158873; color:#fff">Dosen Pembimbing</div>
+              <div class="row" style="font-family: sans-serif;">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="sel1">Pembimbing 1:</label>
+                    <select class="form-control" name='pembimbing1' required disabled>
+                      <option value="">Tidak Ada</option>
+                      <?php
+                      $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '1'";
+                      $result =  mysqli_query($connect, $query);
+                      if ($result) {
+                        while ($row = mysqli_fetch_array($result)) {
+                          $selected = $pembimbing1 == $row['nip'] ? 'selected' : '';
+                          echo '<option value="' . $row['nip'] . '"' . $selected . '>' . $row['nama_dosen'] . '</option>';
+                        }
+                      }
+                      ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="sel1">Pembimbing 2:</label>
+                    <select class="form-control" name='pembimbing2' required disabled>
+                      <option value="">Tidak Ada</option>
+                      <?php
+                      $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '2'";
+                      $result =  mysqli_query($connect, $query);
+                      if ($result) {
+                        while ($row = mysqli_fetch_array($result)) {
+                          $selected = $pembimbing2 == $row['nip'] ? 'selected' : '';
+                          echo '<option value="' . $row['nip'] . '"' . $selected . '>' . $row['nama_dosen'] . '</option>';
+                        }
+                      }
+                      ?>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
           </div>
         </div>
       <?php } ?>

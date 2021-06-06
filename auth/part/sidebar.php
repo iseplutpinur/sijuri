@@ -14,12 +14,12 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li <?= in_array($title, ['User Profile']) ? 'class="active"' : '' ?>>
+                <!-- <li <?= in_array($title, ['User Profile']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=profile">
                         <i class="pe-7s-user"></i>
                         <p>Profile User</p>
                     </a>
-                </li>
+                </li> -->
                 <li <?= in_array($title, ['Data Mahasiswa', 'Tambah Mahasiswa', 'Edit Mahasiswa', 'Hapus Mahasiswa']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=data-mahasiswa">
                         <i class="pe-7s-study"></i>
