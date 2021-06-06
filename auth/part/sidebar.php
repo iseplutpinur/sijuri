@@ -46,7 +46,7 @@
                         <p>Jurusan</p>
                     </a>
                 </li>
-                <li <?= in_array($title, ['dosen-pembimbing']) ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Dosen Pembimbing', 'Tambah pembimbing']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=dosen-pembimbing">
                         <i class="pe-7s-study"></i>
                         <p>Dosen Pembimbing</p>
