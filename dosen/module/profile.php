@@ -35,7 +35,7 @@ while ($row = mysqli_fetch_array($result)) {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>nidn</td>
+                    <td>NIDN</td>
                     <td><?php echo $nidn ?></td>
                   </tr>
                   <tr>
@@ -43,8 +43,16 @@ while ($row = mysqli_fetch_array($result)) {
                     <td><?php echo $nama_dosen ?></td>
                   </tr>
                   <tr>
-                    <td>no. Telepon</td>
+                    <td>Tangggal Lahir</td>
+                    <td><?php echo $tanggal_lahir ?></td>
+                  </tr>
+                  <tr>
+                    <td>No. Telepon</td>
                     <td><?php echo $no_telepon ?></td>
+                  </tr>
+                  <tr>
+                    <td>E-Mail</td>
+                    <td><?php echo $email ?></td>
                   </tr>
                 </tbody>
               </table>

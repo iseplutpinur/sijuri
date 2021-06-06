@@ -4,29 +4,37 @@
 $fakultas = 0;
 $query = "SELECT count(*) as count FROM fakultas";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $fakultas = $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $fakultas = $row['count'];
+  }
 }
 // jumlah jurusan
 $jurusan = 0;
 $query = "SELECT count(*) as count FROM jurusan";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $jurusan = $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $jurusan = $row['count'];
+  }
 }
 // jumlah dosen
 $dosen = 0;
 $query = "SELECT count(*) as count FROM tbl_dosen";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $dosen = $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $dosen = $row['count'];
+  }
 }
 // jumlah mahasiswa
 $mahasiswa = 0;
 $query = "SELECT count(*) as count FROM tbl_mahasiswa";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $mahasiswa = $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $mahasiswa = $row['count'];
+  }
 }
 
 // data pengajuan judul
@@ -34,46 +42,60 @@ while ($row = mysqli_fetch_array($rows)) {
 $total_judul = 0;
 $query = "SELECT count(*) as count FROM skripsi";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $total_judul += ($row['count'] * 2);
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $total_judul += ($row['count'] * 2);
+  }
 }
 
 $belum_dikoreksi = 0;
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul1 = '0'";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $belum_dikoreksi += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $belum_dikoreksi += $row['count'];
+  }
 }
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul2 = '0'";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $belum_dikoreksi += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $belum_dikoreksi += $row['count'];
+  }
 }
 
 // Diterima
 $diterima = 0;
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul1 = '1'";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $diterima += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $diterima += $row['count'];
+  }
 }
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul2 = '1'";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $diterima += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $diterima += $row['count'];
+  }
 }
 
 // ditolak
 $ditolak = 0;
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul1 = '2'";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $ditolak += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $ditolak += $row['count'];
+  }
 }
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul2 = '2'";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $ditolak += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $ditolak += $row['count'];
+  }
 }
 
 
@@ -81,13 +103,17 @@ while ($row = mysqli_fetch_array($rows)) {
 $tidak_diketahui = 0;
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul1 NOT IN ('0','1','2')";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $tidak_diketahui += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $tidak_diketahui += $row['count'];
+  }
 }
 $query = "SELECT count(*) as count FROM skripsi WHERE status_judul2 NOT IN ('0','1','2')";
 $rows = mysqli_query($connect, $query);
-while ($row = mysqli_fetch_array($rows)) {
-  $tidak_diketahui += $row['count'];
+if ($rows) {
+  while ($row = mysqli_fetch_array($rows)) {
+    $tidak_diketahui += $row['count'];
+  }
 }
 
 ?>
