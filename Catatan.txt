@@ -27,3 +27,5 @@ Dosen buat media dan part sama dengan auth
 Mahasiswa
 1. Daftar Pembimbing
 2. Judul
+fix sidebar line 49
+<li <?= in_array($title, ['Dosen Pembimbing', 'Tambah pembimbing']) ? 'class="active"' : '' ?>>
