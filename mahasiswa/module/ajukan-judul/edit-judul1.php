@@ -44,22 +44,6 @@ while ($row = mysqli_fetch_array($result)) {
 																																					echo $desjudul;
 																																				} ?></textarea>
 							</div>
-
-							<div class="form-group">
-								<label for="sel1">Kelas:</label>
-								<select class="form-control" name='kelas' style="width:50%" required>
-									<?php $i = 0;
-									foreach ($kKelas as $kelasku) {
-										if ($i == $kelas) {
-											echo "<option value='$i' selected='selected'>$kelasku</option>";
-										} else {
-											echo "<option value='$i'>$kelasku</option>";
-										}
-										$i++;
-									}
-									?>
-								</select>
-							</div>
 							<button type="submit" class="btn btn-info btn-fill pull-right">Update Data</button>
 							<a href="media.php?action=judul-skripsi" class="btn btn-danger btn-fill pull-right" style="margin-right:5px">Batal</a>
 						</form>

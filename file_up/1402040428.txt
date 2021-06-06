@@ -1,0 +1,24 @@
+Menu Informasi:
+konten menunggu
++ untuk button informasi nya disimpan di home paling atas
+
+Indikator nilai:
+1. ketepatan waktu 50%
+2. kualitas 50%
+* Nilai Score (Home) = ( No 1 + No 2 ) / 2
+- maksimal 100
+- jika telat nilai otomatis 50%
+- konpensasi keterlambatan 10% terhadap durasi aktifitas
+
+Menu My Score
+1. Grafik Nilai Keterlambatan
+2. Grafi Nilai Kualitas
+
+Kamera dibeberapa gadget tidak bisa
+
+
+
+Laptop :
+Jumat sore
+
+colom nilai kualitas dan nilai total
