@@ -17,8 +17,6 @@ include('../library/config.php');
 /* end get config */
 include('part/header.php');
 
-$sb_active = isset($_GET['action']) ? $_GET['action'] : 'dashboard';
-include('part/sidebar.php');
 
 $title = "";
 $main_content = "";
@@ -54,8 +52,25 @@ if (!isset($_GET['action'])) {
     }
 }
 
+// menyiapkan footer dan header
+// header
+$header_title = "SIJURI Kelompok 5"; // default
+$footer_title = 'SIJURI © 2021 Kelompok 5, All Rights Reserved.';
+$result =  mysqli_query($connect, "SELECT isi FROM tbl_pengaturan WHERE nama='header'");
+if ($result->num_rows > 0) {
+    while ($row = mysqli_fetch_array($result)) {
+        $header_title = $row['isi'];
+    }
+}
 
+$result =  mysqli_query($connect, "SELECT isi FROM tbl_pengaturan WHERE nama='footer'");
+if ($result->num_rows > 0) {
+    while ($row = mysqli_fetch_array($result)) {
+        $footer_title = $row['isi'];
+    }
+}
 
+include('part/sidebar.php');
 
 
 // ambil navbar

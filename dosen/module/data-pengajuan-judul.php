@@ -25,7 +25,9 @@
               //include database
               include('../library/database.php');
               //query select where nim
-              $query = "SELECT * FROM skripsi";
+
+              $nip = $_SESSION['nip'];
+              $query = "SELECT * FROM skripsi WHERE pembimbing1='$nip' OR pembimbing2='$nip'";
               $result =  mysqli_query($connect, $query);
               $no = 1;
               while ($row = mysqli_fetch_array($result)) {

@@ -126,16 +126,6 @@ if ($status2 == '0') {
                         } ?></td>
                   </tr>
                   <tr>
-                    <td>Dosen Pembimbing</td>
-                    <td><?php $i = 0;
-                        foreach ($kPembimbing1 as $pemb1) {
-                          if ($pembimbing1 == $i++)
-                            echo $pemb1;
-                        }
-                        ?>
-                    </td>
-                  </tr>
-                  <tr>
                     <td>Status Judul </td>
                     <td><?php if (isset($button1)) {
                           echo $button1;
@@ -146,8 +136,8 @@ if ($status2 == '0') {
                 </tbody>
               </table>
             </div>
-            <a href="module/setujui-judul1.php?&nim=<?php echo $nim ?>&data=1&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Disetujui</a>
-            <a href="module/tidak-disetujui-judul1.php?&nim=<?php echo $nim ?>&data=2&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" type="button" class="btn btn-danger"><i class="pe-7s-config"></i> Tidak Disetujui</a>
+            <a href="module/setujui-judul1.php?&nim=<?php echo $nim ?>&data=1" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Disetujui</a>
+            <a href="module/tidak-disetujui-judul1.php?&nim=<?php echo $nim ?>&data=2" type="button" class="btn btn-danger"><i class="pe-7s-config"></i> Tidak Disetujui</a>
             <br>
             <br>
 
@@ -178,16 +168,6 @@ if ($status2 == '0') {
                         } ?></td>
                   </tr>
                   <tr>
-                    <td>Dosen Pembimbing</td>
-                    <td><?php $i = 0;
-                        foreach ($kPembimbing2 as $pemb2) {
-                          if ($pembimbing2 == $i++)
-                            echo $pemb2;
-                        }
-                        ?>
-                    </td>
-                  </tr>
-                  <tr>
                     <td>Status Judul</td>
                     <td><?php if (isset($button2)) {
                           echo $button2;
@@ -198,11 +178,52 @@ if ($status2 == '0') {
                 </tbody>
               </table>
             </div>
-            <a href="module/setujui-judul2.php?&nim=<?php echo $nim ?>&data=1&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Disetujui</a>
-            <a href="module/tidak-disetujui-judul2.php?&nim=<?php echo $nim ?>&data=2&token=<?php echo SHA1(MD5(SHA1(MD5($_SESSION['nim'])))) ?>" type="button" class="btn btn-danger"><i class="pe-7s-config"></i> Tidak Disetujui</a>
+            <a href="module/setujui-judul2.php?&nim=<?php echo $nim ?>&data=1" type="button" class="btn btn-success" style="border-color: #158873;color: #158873;"><i class="pe-7s-config"></i> Disetujui</a>
+            <a href="module/tidak-disetujui-judul2.php?&nim=<?php echo $nim ?>&data=2" type="button" class="btn btn-danger"><i class="pe-7s-config"></i> Tidak Disetujui</a>
+
+            <br>
+            <br>
+            <div class="alert alert-info" role="alert" style="font-family:sans-serif;background-color:#158873">Dosen Pembimbing</div>
+            <div class="row" style="font-family: sans-serif;">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="sel1">Pembimbing 1:</label>
+                  <select class="form-control" name='pembimbing1' required disabled>
+                    <option value="">Tidak Ada</option>
+                    <?php
+                    $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '1'";
+                    $result =  mysqli_query($connect, $query);
+                    if ($result) {
+                      while ($row = mysqli_fetch_array($result)) {
+                        $selected = $pembimbing1 == $row['nip'] ? 'selected' : '';
+                        echo '<option value="' . $row['nip'] . '"' . $selected . '>' . $row['nama_dosen'] . '</option>';
+                      }
+                    }
+                    ?>
+                  </select>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="sel1">Pembimbing 2:</label>
+                  <select class="form-control" name='pembimbing2' required disabled>
+                    <option value="">Tidak Ada</option>
+                    <?php
+                    $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '2'";
+                    $result =  mysqli_query($connect, $query);
+                    if ($result) {
+                      while ($row = mysqli_fetch_array($result)) {
+                        $selected = $pembimbing2 == $row['nip'] ? 'selected' : '';
+                        echo '<option value="' . $row['nip'] . '"' . $selected . '>' . $row['nama_dosen'] . '</option>';
+                      }
+                    }
+                    ?>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>

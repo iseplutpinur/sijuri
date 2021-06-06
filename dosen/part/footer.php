@@ -4,7 +4,7 @@
 
                 </nav>
                 <p class="copyright pull-left">
-                    uploaded &copy; 2018 <a href="/">Universitas Padjadjaran. </a>All Rights Reserved.
+                    <?= $footer_title ?>
                 </p>
             </div>
         </footer>
@@ -39,7 +39,7 @@
             $(function() {
                 $("#data-alumni").dataTable();
             });
-            document.title = "<?= $title ?>";
+            document.title = "<?= $title . " | " . $header_title ?>";
         </script>
 
         </html>

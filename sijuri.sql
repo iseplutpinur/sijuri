@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 31 Mar 2018 pada 02.46
--- Versi Server: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Waktu pembuatan: 06 Jun 2021 pada 03.12
+-- Versi server: 10.4.18-MariaDB
+-- Versi PHP: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -17,6 +16,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sijuri`
+--
 
 -- --------------------------------------------------------
 
@@ -48,9 +51,7 @@ INSERT INTO `biaya` (`id_biaya`, `kode_fakultas`, `kode_jurusan`, `spp`, `uts_ua
 --
 
 CREATE TABLE `dosen` (
-  `id_dosen` int(11) NOT NULL,
   `nidn` varchar(20) NOT NULL,
-  `username` varchar(20) NOT NULL,
   `password` varchar(10) NOT NULL,
   `nama_dosen` varchar(100) NOT NULL,
   `tempat_lahir` varchar(50) NOT NULL,
@@ -71,92 +72,92 @@ CREATE TABLE `dosen` (
 -- Dumping data untuk tabel `dosen`
 --
 
-INSERT INTO `dosen` (`id_dosen`, `nidn`, `username`, `password`, `nama_dosen`, `tempat_lahir`, `tgl_lahir`, `alamat`, `jenis_kel`, `agama`, `kode_fakultas`, `jabatan`, `kode_jurusan`, `no_telpon`, `no_handphone`, `email`, `foto`) VALUES
-(60, '0709047301', '0709047301', '1234', 'H. Muhyiddin Zainul Arifin, MM', 'Bojonegoro', '1973-04-09', 'Jombang', 'L', 'Islam', '02', '04', '0101,0103,0204,0205', '888', '888', 'muhyidin@yahoo.com', '0709047301foto.jpg'),
-(62, '0710106102', '0710106102', '1234', 'Dr. Chairul Anam, M.Si', 'Pasuruan', '1961-10-10', '', 'L', 'Islam', '02', '05', '0204,0205,0514', '', '', '', '0710106202foto.jpg'),
-(64, '0714128301', '0714128301', '1234', 'Siti Sufaidah, S.Kom., M.Si', 'Jombang', '1983-12-14', '', 'P', 'Islam', '02', '06', '0204,0205', '', '', '', '0714128301foto.jpg'),
-(66, '0720107801', '0720107801', '1234', 'Munawarah, S.Kom., M.Si.', 'Jakarta', '1976-10-20', '', 'P', 'Islam', '02', '10', '0204,0205', '', '', '', '0720107801foto.jpg'),
-(68, '0724116802', '0724116802', '1234', 'Ir. Zulfikar, M.Si', 'Sidoarjo', '1968-11-24', '', 'L', 'Islam', '02', '11', '0101,0204,0205,,0307', '', '', '', '0724116802foto.jpg'),
-(70, '0724066904', '0724066904', '1234', 'H. A. Wahyudin, LC', 'Jakarta', '1969-06-24', '', 'L', 'Islam', '02', '10', '0204,0205,0306,0307', '', '', '', '0724066904foto.jpg'),
-(73, '0703016501', '0703016501', '1234', 'Ir. Moch. Noerhadi Sudjoni, M.B.A.', 'Bojonegoro', '1965-01-03', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0703016501foto.jpg'),
-(74, '0714117702', '0714117702', '1234', 'Ponari Isno, S.E., S.Kom.', 'Jombang', '1977-11-14', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0714117702foto.jpg'),
-(76, '0701107204', '0701107204', '1234', 'Mochammad Chumaidi, SE, MM', 'Jombang', '1972-10-01', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0701107204foto.jpg'),
-(78, '0704038302', '0704038202', '1234', 'Hasan Bisry Isa Alfaris, S. Kom', 'Gresik', '1983-03-04', 'Ds. Kepatihan Gg. V No 25 Kepatihan Jombang', 'L', 'Islam', '02', '07', '0204,0205', '0321-869252', '08563113833', 'axl_faris@yahoo.com', '0704038202foto.jpg'),
-(80, '0718108602', '0718108602', '1234', 'Primaadi Airlangga, M.T', 'Surabaya', '1986-10-18', '', 'L', 'Islam', '02', '08', '0204,0205', '', '', '', '0718108602foto.jpg'),
-(83, '0709038301', '0709038301', '1234', 'Tholib Hariono, S.Kom', 'Lamongan', '1983-03-09', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0709038301foto.jpg'),
-(86, '13002001', '0725061988', '1234', 'Sujono, S.Kom', 'Lamongan', '1988-06-25', '', 'L', 'Islam', '02', '10', '0103,0204,0205', '', '', '', '0725061988foto.jpg'),
-(87, '0705088501', '0705088501', '1234', 'Agus Syifaun Najah, S.Kom', 'Nganjuk', '1985-08-05', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0705088501foto.jpg'),
-(88, '09002002', '27021981', '1234', 'H. Abd. hanan majdy, S. Kom', 'Jombang', '1981-02-27', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '27021981foto.jpg'),
-(89, '07002004', '23091969', '1234', 'Sutaji, S.E., S.Kom., M.Pd., M.Si', 'Jombang', '1969-09-23', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '23091969foto.jpg'),
-(90, '10002003', '01091976', '1234', 'H. Khoiril Anam, M. HI', 'Grobogan', '1976-09-01', '', 'L', 'Islam', '02', '10', '0101,0204,0205', '', '', '', '01091976foto.jpg'),
-(92, '99.0001.062', '0702096702', '1234', 'Dr. H. Abd. Kholid, M.Ag', 'Jombang', '1967-09-02', 'Jombang', 'L', 'Islam', '02', '02', '0101', '', '', '', '0702096702foto.jpg'),
-(93, '0709097802', '0709097802', '1234', 'Dr. Anton Muhibuddin, ST., MP', 'Malang', '0000-00-00', '', 'L', 'Islam', '03', '01', '', '', '', '', '0709097802foto.jpg'),
-(94, '12002005', '07031988', '1234', 'Faisol Hidayatulloh, M.Pd.', '', '0000-00-00', '', 'L', '', '02', '10', '0204,0205,0306,0307,0308,0309,0410,0411,0412,0413,0514', '', '', '', '07031988-foto.jpg'),
-(95, '14003006', '2022', '1234', 'Agus Suhadi, SP', 'Lamongan', '2014-08-03', '', 'L', 'Islam', '03', '09', '0307', '', '', '', '2022foto.jpg'),
-(98, '14003001', '14003001', '1234', 'Ir. Umi Kalsum, MP', '', '0000-00-00', '', 'P', 'Islam', '03', '14', '0306,0307', '', '', '', '14003001foto.jpg'),
-(99, '14003002', '14003002', '1234', 'Ir. Yudhy Wardhani, MP', '', '0000-00-00', '', 'P', 'Islam', '03', '13', '0307', '', '', '', '14003002foto.jpg'),
-(100, '14003003', '14003003', '1234', 'Ir. Arifah Roosenani, MS', '', '0000-00-00', '', 'P', 'Islam', '03', '09', '0307,0309', '', '', '', '14003003foto.jpg'),
-(101, '14003004', '14003004', '1234', 'Hj.Siti Nur Qomariyah, MSi', '', '0000-00-00', '', 'P', 'Islam', '03', '10', '0306,,0308,0309', '', '', '', '14003004foto.jpg'),
-(102, '14003005', '14003005', '1234', 'Ir. Hj.Elina Sabat, MSi ', '', '0000-00-00', '', 'P', '', '03', '09', '0306,0307', '', '', '', '14003005foto.jpg'),
-(103, '14003007', '14003007', '1234', 'Miftachul Chusnah, STp', '', '0000-00-00', '', 'P', 'Islam', '03', '10', '0307,0308,0309', '', '', '', '14003007foto.jpg'),
-(104, '0711026001', '0711026001', '1234', 'Nurul Yaqin,M.S.c', 'jombang', '1980-08-01', 'Belum ada', 'L', 'Islam', '02', '10', '0204,0205', '-', '-', 'NurulYaqin@unwaha.ac.id', '0711026001foto.jpg'),
-(105, '89.0001.004', '89.0001.004', '1234', 'Drs. H. Muhammad Anshori, M.Pd.I', 'Jombang', '2014-09-11', '', 'L', '', '01', '20', '0101,0102', '', '', '', '89.0001.004foto.jpg'),
-(106, '06001044', '196903112006041001', '1234', 'Ali Muttaqin, S.Ag, M.Pd.I', 'Jombang', '2014-09-11', '', 'L', '', '04', '26', '0101,0410,0411,0412,0413,0514', '', '', '', '196903112006041001foto.jpg'),
-(107, '14003010', '14003010', '1234', 'Ir. R. H. Hari Prasetyo, M.P', 'Jombang', '2014-09-06', '', 'L', '', '03', '16', '0306,0307,0308,0309', '', '', '', '14003010foto.jpg'),
-(108, '14003011', '14003011', '1234', 'Dr. Darmawan Saptadi, S.P. M.P', 'Jombang', '2014-09-04', '', 'L', '', '03', '15', '0306,0307,0308,0309', '', '', '', '14003011foto.jpg'),
-(109, '10003097', '14004001', '1234', 'Mashuda, S.Pd. M.Si', 'Jombang', '2014-09-03', '', 'L', '', '04', '24', '0103,0410,0411,0412,0413,0514', '', '', '', '14004001foto.jpg'),
-(110, '14004002', '14004002', '1234', 'Drs. Bambang Suprayogi, M.Pd', 'Nganjuk', '2014-09-03', '', 'L', '', '04', '22', '0410,0411,0412,0413,', '', '', '', '14004002foto.jpg'),
-(111, '14004003', '14004003', '1234', 'Suci Prihatiningtyas, S.Si. M.Pd', 'Jombang', '2014-09-03', '', 'L', '', '04', '23', '0410,0411,0412,0413', '', '', '', '14004003foto.jpg'),
-(112, '14004004', '14004004', '1234', 'Widodo Poewarnto, S.Pd. M.Ed', 'Jombang', '2014-09-11', '', 'L', '', '04', '25', '0410,0411,0412,0413,', '', '', '', '14004004foto.jpg'),
-(113, '05.001.046', '05.001.046', '1234', 'Dr. Hj. Umi Chaidaroh, Sh. M.HI', 'Jombang', '2014-09-12', '', 'L', '', '05', '29', '0101,0102,0514', '', '', '', '05.001.046foto.jpg'),
-(114, '96.001.058', '96.001.058', '1234', 'Drs. Waslah, M.Pd.I', 'Brebes', '1968-03-23', '', 'L', '', '01', '17', '0103', '', '', '', '96.001.058foto.jpg'),
-(115, '10.003.093', '10.003.093', '1234', 'Ahmad Taqiyuddin, M.HI', 'Surabaya', '1988-09-13', '', 'L', '', '05', '28', '0101,0102,0103,0410,0411,0412,0413,0514', '', '', '', '10.003.093foto.jpg'),
-(116, '12.003.104', '12.003.104', '1234', 'Abdul Haris, S.HI', 'Jombang', '1988-06-09', '', 'L', '', '01', '19', '0101,0102,0103,0514', '', '', '', '12.003.104foto.jpg'),
-(117, '09.001.092', '09.001.092', '1234', 'H. Ali Mudlofar, Lc. M.Pd.I', 'Gresik', '1979-08-28', '', 'L', '', '01', '18', '0101,0102', '', '', '', '09.001.092foto.jpg'),
-(118, '150072855', '150072855', '1234', 'Drs. H. M. Syamsul Huda AS. S.H. M.HI', 'Jombang', '1946-08-01', '', 'L', '', '01', '10', '0101,0102,0103', '', '', '', '150072855foto.jpg'),
-(119, '83.001.004', '83.001.004', '1234', 'Drs. H. Choirul Anam, M.Pd.I', 'Jombang', '1945-07-14', '', 'L', '', '01', '10', '0101', '', '', '', '83.001.004foto.jpg'),
-(120, '84.001.010', '84.001.010', '1234', 'Dra. Hj. Siti Fatimah Hasib, MM', 'Bangil', '1957-09-15', '', 'L', '', '01', '10', '0101', '', '', '', '84.001.010foto.jpg'),
-(121, '84.001.012', '84.001.012', '1234', 'Drs. KH. M. Muthoharun Lc. M.Pd.I', 'Pemalang', '1949-05-23', '', 'L', '', '01', '10', '0102', '', '', '', '84.001.012foto.jpg'),
-(122, '96.001.095', '96.001.095', '1234', 'Dr. H. Fatkulloh, M.Pd.I', 'Jombang', '1965-05-28', '', 'L', '', '01', '03', '0306,0307', '', '', '', '96.001.095foto.jpg'),
-(123, '89.001.045', '89.001.045', '1234', 'H. M. Farid Ma ruf, M.A', 'Jombang', '1954-07-17', '', 'L', '', '01', '10', '0101,0102', '', '', '', '89.001.045foto.jpg'),
-(124, '96.001.055', '96.001.055', '1234', 'Drs. Markaban', 'Blitar', '1964-06-27', '', 'L', '', '01', '10', '0101', '', '', '', '96.001.055foto.jpg'),
-(125, '88.001.037', '88.001.037', '1234', 'Dra. Hj. Umadatul Choirat', 'Jombang', '1959-11-06', '', 'L', '', '01', '10', '0101', '', '', '', '88.001.037foto.jpg'),
-(126, '88.001.031', '88.001.031', '1234', 'H. Mustain Hasan, SH, H.Hum', 'Jombang', '1951-04-08', '', 'L', '', '01', '10', '0101,0410,0411,0412,0413,', '', '', '', '88.001.031foto.jpg'),
-(127, '03.001.065', '03.001.065', '1234', 'Mukhoiyaroh, S.Ag, M.Ag', 'Jombang', '1973-04-09', '', 'L', '', '01', '10', '0101,0102', '', '', '', '03.001.065foto.jpg'),
-(128, '04.001.068', '04.001.068', '1234', 'H. Mahmud Fauzi, Lc, M.Pd.I', 'Jombang', '1946-08-01', '', 'L', '', '01', '10', '0102,0410,0411,0412,0413,', '', '', '', '04.001.068foto.jpg'),
-(130, '06.001.086', '06.001.086', '1234', 'Ali Maududi, S.Pd, M.Kes', 'Jombang', '1979-05-06', '', 'L', '', '01', '10', '0101,0102,0103', '', '', '', '06.001.086foto.jpg'),
-(131, '07.001.087', '07.001.087', '1234', 'Drs. H. Abd. Choliq, SH. S.Pd, M.Si', 'Lamongan', '1963-10-12', '', 'L', '', '01', '10', '0101', '', '', '', '07.001.087foto.jpg'),
-(132, '99.001.089', '99.001.089', '1234', 'Ali Priyono, S.Ag, M.Pd.I', 'Lamongan', '1973-04-12', '', 'L', '', '01', '21', '0101,0102', '', '', '', '99.001.089foto.jpg'),
-(133, '09.001.091', '09.001.091', '1234', 'Moh. Khozin, S.Ag, M.Pd.I', 'Jombang', '1971-04-14', '', 'L', '', '01', '10', '0101', '', '', '', '09.001.091foto.jpg'),
-(135, '10.001.094', '10.001.094', '1234', 'Moh. Sifak, S.Ag, M.Pd.I', 'Jombang', '1977-03-24', '', 'L', '', '01', '10', '0101', '', '', '', '10.001.094foto.jpg'),
-(136, '06.001.082', '06.001.082', '1234', 'Machnunah Ani Zulfah, S.Pd.I, M.Pd.I', 'Jombang', '1983-04-20', '', 'L', '', '01', '10', '0101,0102', '', '', '', '06.001.082foto.jpg'),
-(137, '08.001.091', '08.001.091', '1234', 'Drs. H. Ach. Hasan M.Pd.I', 'Brebes', '1956-03-23', '', 'L', 'Islam', '01', '10', '0101,0102,0410,0411,0412,0413,0514', '', '', '', '08.001.091foto.jpg'),
-(138, '96.001.057', '96.001.057', '1234', 'H. Saihul Atho AH, S.Ag, M.Pd.I', 'Jombang', '1970-03-30', '', 'L', '', '01', '10', '0101,0102,0103', '', '', '', '96.001.057foto.jpg'),
-(139, '05.002.092', '05.002.092', '1234', 'Hidayahtur Rohmah, S.Pd, M.Pd', 'Jombang', '1984-11-27', '', 'L', '', '01', '10', '0101', '', '', '', '05.002.092foto.jpg'),
-(140, '10.003.094', '10.003.094', '1234', 'Asha Fikriyyah, M.E.I', 'Kediri', '1975-04-19', '', 'L', '', '01', '10', '0103', '', '', '', '10.003.094foto.jpg'),
-(141, '10.003.095', '10.003.095', '1234', 'Dr. Ainurrofiq AL-Amin, S.H, M.Ag', 'Nganjuk', '1972-06-25', '', 'L', '', '01', '10', '0101,0103', '', '', '', '10.003.095foto.jpg'),
-(142, '10.003.96', '10.003.96', '1234', 'M. Sholeh Mauluddin, SE, M.Si', 'Kediri', '1975-04-19', '', 'L', '', '01', '10', '0103,0514', '', '', '', '10.003.96foto.jpg'),
-(143, '10.003.098', '10.003.098', '1234', 'Moh. Yasin Fathul Bari, M.pd', 'Lamongan', '1986-10-04', '', 'L', '', '01', '10', '0102', '', '', '', '10.003.098foto.jpg'),
-(144, '12.002.010', '12.002.010', '1234', 'Muhammad Zainuri, Lc', 'Jombang', '1980-01-27', '', 'L', '', '01', '10', '0102', '', '', '', '12.002.010foto.jpg'),
-(145, '12.003.101', '12.003.101', '1234', 'Arif Zunaidi, S.HI, MM', 'Kediri', '1982-04-07', '', 'L', '', '01', '10', '0103', '', '', '', '12.003.101foto.jpg'),
-(146, '12.003.103', '12.003.103', '1234', 'Robikan M.HI', 'Tuban', '1975-05-12', '', 'L', '', '01', '10', '0103,0514', '', '', '', '12.003.103foto.jpg'),
-(147, '12.001.104', '12.001.104', '1234', 'Moh. Saat Ibnu Waqdin, S.Pd.I', 'Nganjuk', '1984-07-30', '', 'L', '', '01', '10', '0101', '', '', '', '12.001.104foto.jpg'),
-(148, '14.004.005', '14.004.005', '1234', 'Mustamin, SH, M.Hum', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307,0309,0308,0410,0411,0412,0413,', '', '', '', '14.004.005foto.jpg'),
-(149, '14.004.004', '14.004.004', '1234', 'A. Kanzul Fikri, S.Pd, M.Pd', '', '0000-00-00', '', 'L', '', '04', '10', '0410,0411,0412,0413,', '', '', '', '14.004.004foto.jpg'),
-(150, '14.004.003', '14.004.003', '1234', 'Arie Zannu Maryanto, S.S', '', '0000-00-00', '', 'L', '', '04', '10', '0410,0411,0412,0413,', '', '', '', '14.004.003foto.jpg'),
-(151, '14.004.002', '14.004.002', '1234', 'M. Sabilurrosyad, S.Pd', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307,0309,0308', '', '', '', '14.004.002foto.jpg'),
-(152, '14001050', '14001050', '1234', 'Sukamto, M.EI', 'Jombang', '0000-00-00', '', 'L', '', '01', '10', '0103', '', '', '', '14001050foto.jpg'),
-(153, '14001056', '14001056', '1234', 'Hariyono, SH, MEI', '', '0000-00-00', '', 'L', '', '01', '10', '0103', '', '', '', '14001056foto.jpg'),
-(154, '14001057', '14001057', '1234', 'Imam Syafii, SE', '', '0000-00-00', '', 'L', '', '01', '10', '0103', '', '', '', '14001057foto.jpg'),
-(155, '14003017', '14003017', '1234', 'Abd.Rosid,MP.d', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307,0309,0308', '', '', '', '14003017foto.jpg'),
-(156, '03.002.007', '03.002.007', '1234', 'Abdur Rouf Hasbullah, M.Pd.I', '', '0000-00-00', '', 'L', '', '01', '10', '0102', '', '', '', '03.002.007foto.jpg'),
-(157, '05.01.006', '05.01.006', '1234', 'M. Zainuri, Lc', 'Jombang', '0000-00-00', '', 'L', '', '01', '10', '0101,0102', '', '', '', '05.01.006foto.jpg'),
-(158, '05.01.060', '05.01.060', '1234', 'Iin Baroroh, M.Pd', '', '0000-00-00', '', 'L', '', '01', '10', '0102', '', '', '', '05.01.060foto.jpg'),
-(159, '14.01.099', '14.01.099', '1234', 'Amrini Shofiyah, S.Pd', '', '0000-00-00', '', 'L', '', '01', '10', '0102', '', '', '', '14.01.099foto.jpg'),
-(160, '14.03.025', '14.03.025', '1234', 'Mis Hartini, SP.,MM', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307', '', '', '', '14.03.025foto.jpg'),
-(161, '13004013', '13004013', '1234', 'Dr. H. Soenartono Supomo', '', '0000-00-00', '', 'L', '', '03', '10', '0306', '', '', '', '13004013foto.jpg'),
-(164, '10010102', '10010102', '1234', 'Nailul Fauziyah, S.Pd.I', '', '0000-00-00', '', 'L', '', '01', '10', ',,,,,,0101,,,,,,,', '', '', '', '10010102foto.jpg'),
-(165, '08020210', '08020210', '1234', 'Moh Abdullah Rifan, Lc', '', '0000-00-00', '', 'L', '', '01', '10', ',,,,,,0101,,,,,,,', '', '', '', '08020210foto.jpg');
+INSERT INTO `dosen` (`nidn`, `password`, `nama_dosen`, `tempat_lahir`, `tgl_lahir`, `alamat`, `jenis_kel`, `agama`, `kode_fakultas`, `jabatan`, `kode_jurusan`, `no_telpon`, `no_handphone`, `email`, `foto`) VALUES
+('03.001.065', '1234', 'Mukhoiyaroh, S.Ag, M.Ag', 'Jombang', '1973-04-09', '', 'L', '', '01', '10', '0101,0102', '', '', '', '03.001.065foto.jpg'),
+('03.002.007', '1234', 'Abdur Rouf Hasbullah, M.Pd.I', '', '0000-00-00', '', 'L', '', '01', '10', '0102', '', '', '', '03.002.007foto.jpg'),
+('04.001.068', '1234', 'H. Mahmud Fauzi, Lc, M.Pd.I', 'Jombang', '1946-08-01', '', 'L', '', '01', '10', '0102,0410,0411,0412,0413,', '', '', '', '04.001.068foto.jpg'),
+('05.001.046', '1234', 'Dr. Hj. Umi Chaidaroh, Sh. M.HI', 'Jombang', '2014-09-12', '', 'L', '', '05', '29', '0101,0102,0514', '', '', '', '05.001.046foto.jpg'),
+('05.002.092', '1234', 'Hidayahtur Rohmah, S.Pd, M.Pd', 'Jombang', '1984-11-27', '', 'L', '', '01', '10', '0101', '', '', '', '05.002.092foto.jpg'),
+('05.01.006', '1234', 'M. Zainuri, Lc', 'Jombang', '0000-00-00', '', 'L', '', '01', '10', '0101,0102', '', '', '', '05.01.006foto.jpg'),
+('05.01.060', '1234', 'Iin Baroroh, M.Pd', '', '0000-00-00', '', 'L', '', '01', '10', '0102', '', '', '', '05.01.060foto.jpg'),
+('06.001.082', '1234', 'Machnunah Ani Zulfah, S.Pd.I, M.Pd.I', 'Jombang', '1983-04-20', '', 'L', '', '01', '10', '0101,0102', '', '', '', '06.001.082foto.jpg'),
+('06.001.086', '1234', 'Ali Maududi, S.Pd, M.Kes', 'Jombang', '1979-05-06', '', 'L', '', '01', '10', '0101,0102,0103', '', '', '', '06.001.086foto.jpg'),
+('06001044', '1234', 'Ali Muttaqin, S.Ag, M.Pd.I', 'Jombang', '2014-09-11', '', 'L', '', '04', '26', '0101,0410,0411,0412,0413,0514', '', '', '', '196903112006041001foto.jpg'),
+('07.001.087', '1234', 'Drs. H. Abd. Choliq, SH. S.Pd, M.Si', 'Lamongan', '1963-10-12', '', 'L', '', '01', '10', '0101', '', '', '', '07.001.087foto.jpg'),
+('07002004', '1234', 'Sutaji, S.E., S.Kom., M.Pd., M.Si', 'Jombang', '1969-09-23', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '23091969foto.jpg'),
+('0701107204', '1234', 'Mochammad Chumaidi, SE, MM', 'Jombang', '1972-10-01', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0701107204foto.jpg'),
+('0703016501', '1234', 'Ir. Moch. Noerhadi Sudjoni, M.B.A.', 'Bojonegoro', '1965-01-03', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0703016501foto.jpg'),
+('0704038302', '1234', 'Hasan Bisry Isa Alfaris, S. Kom', 'Gresik', '1983-03-04', 'Ds. Kepatihan Gg. V No 25 Kepatihan Jombang', 'L', 'Islam', '02', '07', '0204,0205', '0321-869252', '08563113833', 'axl_faris@yahoo.com', '0704038202foto.jpg'),
+('0705088501', '1234', 'Agus Syifaun Najah, S.Kom', 'Nganjuk', '1985-08-05', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0705088501foto.jpg'),
+('0709038301', '1234', 'Tholib Hariono, S.Kom', 'Lamongan', '1983-03-09', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0709038301foto.jpg'),
+('0709047301', '1234', 'H. Muhyiddin Zainul Arifin, MM', 'Bojonegoro', '1973-04-09', 'Jombang', 'L', 'Islam', '02', '04', '0101,0103,0204,0205', '888', '888', 'muhyidin@yahoo.com', '0709047301foto.jpg'),
+('0709097802', '1234', 'Dr. Anton Muhibuddin, ST., MP', 'Malang', '0000-00-00', '', 'L', 'Islam', '03', '01', '', '', '', '', '0709097802foto.jpg'),
+('0710106102', '1234', 'Dr. Chairul Anam, M.Si', 'Pasuruan', '1961-10-10', '', 'L', 'Islam', '02', '05', '0204,0205,0514', '', '', '', '0710106202foto.jpg'),
+('0711026001', '1234', 'Nurul Yaqin,M.S.c', 'jombang', '1980-08-01', 'Belum ada', 'L', 'Islam', '02', '10', '0204,0205', '-', '-', 'NurulYaqin@unwaha.ac.id', '0711026001foto.jpg'),
+('0714117702', '1234', 'Ponari Isno, S.E., S.Kom.', 'Jombang', '1977-11-14', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '0714117702foto.jpg'),
+('0714128301', '1234', 'Siti Sufaidah, S.Kom., M.Si', 'Jombang', '1983-12-14', '', 'P', 'Islam', '02', '06', '0204,0205', '', '', '', '0714128301foto.jpg'),
+('0718108602', '1234', 'Primaadi Airlangga, M.T', 'Surabaya', '1986-10-18', '', 'L', 'Islam', '02', '08', '0204,0205', '', '', '', '0718108602foto.jpg'),
+('0720107801', '1234', 'Munawarah, S.Kom., M.Si.', 'Jakarta', '1976-10-20', '', 'P', 'Islam', '02', '10', '0204,0205', '', '', '', '0720107801foto.jpg'),
+('0724066904', '1234', 'H. A. Wahyudin, LC', 'Jakarta', '1969-06-24', '', 'L', 'Islam', '02', '10', '0204,0205,0306,0307', '', '', '', '0724066904foto.jpg'),
+('0724116802', '1234', 'Ir. Zulfikar, M.Si', 'Sidoarjo', '1968-11-24', '', 'L', 'Islam', '02', '11', '0101,0204,0205,,0307', '', '', '', '0724116802foto.jpg'),
+('08.001.091', '1234', 'Drs. H. Ach. Hasan M.Pd.I', 'Brebes', '1956-03-23', '', 'L', 'Islam', '01', '10', '0101,0102,0410,0411,0412,0413,0514', '', '', '', '08.001.091foto.jpg'),
+('08020210', '1234', 'Moh Abdullah Rifan, Lc', '', '0000-00-00', '', 'L', '', '01', '10', ',,,,,,0101,,,,,,,', '', '', '', '08020210foto.jpg'),
+('09.001.091', '1234', 'Moh. Khozin, S.Ag, M.Pd.I', 'Jombang', '1971-04-14', '', 'L', '', '01', '10', '0101', '', '', '', '09.001.091foto.jpg'),
+('09.001.092', '1234', 'H. Ali Mudlofar, Lc. M.Pd.I', 'Gresik', '1979-08-28', '', 'L', '', '01', '18', '0101,0102', '', '', '', '09.001.092foto.jpg'),
+('09002002', '1234', 'H. Abd. hanan majdy, S. Kom', 'Jombang', '1981-02-27', '', 'L', 'Islam', '02', '10', '0204,0205', '', '', '', '27021981foto.jpg'),
+('10.001.094', '1234', 'Moh. Sifak, S.Ag, M.Pd.I', 'Jombang', '1977-03-24', '', 'L', '', '01', '10', '0101', '', '', '', '10.001.094foto.jpg'),
+('10.003.093', '1234', 'Ahmad Taqiyuddin, M.HI', 'Surabaya', '1988-09-13', '', 'L', '', '05', '28', '0101,0102,0103,0410,0411,0412,0413,0514', '', '', '', '10.003.093foto.jpg'),
+('10.003.094', '1234', 'Asha Fikriyyah, M.E.I', 'Kediri', '1975-04-19', '', 'L', '', '01', '10', '0103', '', '', '', '10.003.094foto.jpg'),
+('10.003.095', '1234', 'Dr. Ainurrofiq AL-Amin, S.H, M.Ag', 'Nganjuk', '1972-06-25', '', 'L', '', '01', '10', '0101,0103', '', '', '', '10.003.095foto.jpg'),
+('10.003.098', '1234', 'Moh. Yasin Fathul Bari, M.pd', 'Lamongan', '1986-10-04', '', 'L', '', '01', '10', '0102', '', '', '', '10.003.098foto.jpg'),
+('10.003.96', '1234', 'M. Sholeh Mauluddin, SE, M.Si', 'Kediri', '1975-04-19', '', 'L', '', '01', '10', '0103,0514', '', '', '', '10.003.96foto.jpg'),
+('10002003', '1234', 'H. Khoiril Anam, M. HI', 'Grobogan', '1976-09-01', '', 'L', 'Islam', '02', '10', '0101,0204,0205', '', '', '', '01091976foto.jpg'),
+('10003097', '1234', 'Mashuda, S.Pd. M.Si', 'Jombang', '2014-09-03', '', 'L', '', '04', '24', '0103,0410,0411,0412,0413,0514', '', '', '', '14004001foto.jpg'),
+('10010102', '1234', 'Nailul Fauziyah, S.Pd.I', '', '0000-00-00', '', 'L', '', '01', '10', ',,,,,,0101,,,,,,,', '', '', '', '10010102foto.jpg'),
+('12.001.104', '1234', 'Moh. Saat Ibnu Waqdin, S.Pd.I', 'Nganjuk', '1984-07-30', '', 'L', '', '01', '10', '0101', '', '', '', '12.001.104foto.jpg'),
+('12.002.010', '1234', 'Muhammad Zainuri, Lc', 'Jombang', '1980-01-27', '', 'L', '', '01', '10', '0102', '', '', '', '12.002.010foto.jpg'),
+('12.003.101', '1234', 'Arif Zunaidi, S.HI, MM', 'Kediri', '1982-04-07', '', 'L', '', '01', '10', '0103', '', '', '', '12.003.101foto.jpg'),
+('12.003.103', '1234', 'Robikan M.HI', 'Tuban', '1975-05-12', '', 'L', '', '01', '10', '0103,0514', '', '', '', '12.003.103foto.jpg'),
+('12.003.104', '1234', 'Abdul Haris, S.HI', 'Jombang', '1988-06-09', '', 'L', '', '01', '19', '0101,0102,0103,0514', '', '', '', '12.003.104foto.jpg'),
+('12002005', '1234', 'Faisol Hidayatulloh, M.Pd.', '', '0000-00-00', '', 'L', '', '02', '10', '0204,0205,0306,0307,0308,0309,0410,0411,0412,0413,0514', '', '', '', '07031988-foto.jpg'),
+('13002001', '1234', 'Sujono, S.Kom', 'Lamongan', '1988-06-25', '', 'L', 'Islam', '02', '10', '0103,0204,0205', '', '', '', '0725061988foto.jpg'),
+('13004013', '1234', 'Dr. H. Soenartono Supomo', '', '0000-00-00', '', 'L', '', '03', '10', '0306', '', '', '', '13004013foto.jpg'),
+('14.004.002', '1234', 'M. Sabilurrosyad, S.Pd', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307,0309,0308', '', '', '', '14.004.002foto.jpg'),
+('14.004.003', '1234', 'Arie Zannu Maryanto, S.S', '', '0000-00-00', '', 'L', '', '04', '10', '0410,0411,0412,0413,', '', '', '', '14.004.003foto.jpg'),
+('14.004.004', '1234', 'A. Kanzul Fikri, S.Pd, M.Pd', '', '0000-00-00', '', 'L', '', '04', '10', '0410,0411,0412,0413,', '', '', '', '14.004.004foto.jpg'),
+('14.004.005', '1234', 'Mustamin, SH, M.Hum', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307,0309,0308,0410,0411,0412,0413,', '', '', '', '14.004.005foto.jpg'),
+('14.01.099', '1234', 'Amrini Shofiyah, S.Pd', '', '0000-00-00', '', 'L', '', '01', '10', '0102', '', '', '', '14.01.099foto.jpg'),
+('14.03.025', '1234', 'Mis Hartini, SP.,MM', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307', '', '', '', '14.03.025foto.jpg'),
+('14001050', '1234', 'Sukamto, M.EI', 'Jombang', '0000-00-00', '', 'L', '', '01', '10', '0103', '', '', '', '14001050foto.jpg'),
+('14001056', '1234', 'Hariyono, SH, MEI', '', '0000-00-00', '', 'L', '', '01', '10', '0103', '', '', '', '14001056foto.jpg'),
+('14001057', '1234', 'Imam Syafii, SE', '', '0000-00-00', '', 'L', '', '01', '10', '0103', '', '', '', '14001057foto.jpg'),
+('14003001', '1234', 'Ir. Umi Kalsum, MP', '', '0000-00-00', '', 'P', 'Islam', '03', '14', '0306,0307', '', '', '', '14003001foto.jpg'),
+('14003002', '1234', 'Ir. Yudhy Wardhani, MP', '', '0000-00-00', '', 'P', 'Islam', '03', '13', '0307', '', '', '', '14003002foto.jpg'),
+('14003003', '1234', 'Ir. Arifah Roosenani, MS', '', '0000-00-00', '', 'P', 'Islam', '03', '09', '0307,0309', '', '', '', '14003003foto.jpg'),
+('14003004', '1234', 'Hj.Siti Nur Qomariyah, MSi', '', '0000-00-00', '', 'P', 'Islam', '03', '10', '0306,,0308,0309', '', '', '', '14003004foto.jpg'),
+('14003005', '1234', 'Ir. Hj.Elina Sabat, MSi ', '', '0000-00-00', '', 'P', '', '03', '09', '0306,0307', '', '', '', '14003005foto.jpg'),
+('14003006', '1234', 'Agus Suhadi, SP', 'Lamongan', '2014-08-03', '', 'L', 'Islam', '03', '09', '0307', '', '', '', '2022foto.jpg'),
+('14003007', '1234', 'Miftachul Chusnah, STp', '', '0000-00-00', '', 'P', 'Islam', '03', '10', '0307,0308,0309', '', '', '', '14003007foto.jpg'),
+('14003010', '1234', 'Ir. R. H. Hari Prasetyo, M.P', 'Jombang', '2014-09-06', '', 'L', '', '03', '16', '0306,0307,0308,0309', '', '', '', '14003010foto.jpg'),
+('14003011', '1234', 'Dr. Darmawan Saptadi, S.P. M.P', 'Jombang', '2014-09-04', '', 'L', '', '03', '15', '0306,0307,0308,0309', '', '', '', '14003011foto.jpg'),
+('14003017', '1234', 'Abd.Rosid,MP.d', '', '0000-00-00', '', 'L', '', '03', '10', '0306,0307,0309,0308', '', '', '', '14003017foto.jpg'),
+('14004002', '1234', 'Drs. Bambang Suprayogi, M.Pd', 'Nganjuk', '2014-09-03', '', 'L', '', '04', '22', '0410,0411,0412,0413,', '', '', '', '14004002foto.jpg'),
+('14004003', '1234', 'Suci Prihatiningtyas, S.Si. M.Pd', 'Jombang', '2014-09-03', '', 'L', '', '04', '23', '0410,0411,0412,0413', '', '', '', '14004003foto.jpg'),
+('14004004', '1234', 'Widodo Poewarnto, S.Pd. M.Ed', 'Jombang', '2014-09-11', '', 'L', '', '04', '25', '0410,0411,0412,0413,', '', '', '', '14004004foto.jpg'),
+('150072855', '1234', 'Drs. H. M. Syamsul Huda AS. S.H. M.HI', 'Jombang', '1946-08-01', '', 'L', '', '01', '10', '0101,0102,0103', '', '', '', '150072855foto.jpg'),
+('83.001.004', '1234', 'Drs. H. Choirul Anam, M.Pd.I', 'Jombang', '1945-07-14', '', 'L', '', '01', '10', '0101', '', '', '', '83.001.004foto.jpg'),
+('84.001.010', '1234', 'Dra. Hj. Siti Fatimah Hasib, MM', 'Bangil', '1957-09-15', '', 'L', '', '01', '10', '0101', '', '', '', '84.001.010foto.jpg'),
+('84.001.012', '1234', 'Drs. KH. M. Muthoharun Lc. M.Pd.I', 'Pemalang', '1949-05-23', '', 'L', '', '01', '10', '0102', '', '', '', '84.001.012foto.jpg'),
+('88.001.031', '1234', 'H. Mustain Hasan, SH, H.Hum', 'Jombang', '1951-04-08', '', 'L', '', '01', '10', '0101,0410,0411,0412,0413,', '', '', '', '88.001.031foto.jpg'),
+('88.001.037', '1234', 'Dra. Hj. Umadatul Choirat', 'Jombang', '1959-11-06', '', 'L', '', '01', '10', '0101', '', '', '', '88.001.037foto.jpg'),
+('89.0001.004', '1234', 'Drs. H. Muhammad Anshori, M.Pd.I', 'Jombang', '2014-09-11', '', 'L', '', '01', '20', '0101,0102', '', '', '', '89.0001.004foto.jpg'),
+('89.001.045', '1234', 'H. M. Farid Ma ruf, M.A', 'Jombang', '1954-07-17', '', 'L', '', '01', '10', '0101,0102', '', '', '', '89.001.045foto.jpg'),
+('96.001.055', '1234', 'Drs. Markaban', 'Blitar', '1964-06-27', '', 'L', '', '01', '10', '0101', '', '', '', '96.001.055foto.jpg'),
+('96.001.057', '1234', 'H. Saihul Atho AH, S.Ag, M.Pd.I', 'Jombang', '1970-03-30', '', 'L', '', '01', '10', '0101,0102,0103', '', '', '', '96.001.057foto.jpg'),
+('96.001.058', '1234', 'Drs. Waslah, M.Pd.I', 'Brebes', '1968-03-23', '', 'L', '', '01', '17', '0103', '', '', '', '96.001.058foto.jpg'),
+('96.001.095', '1234', 'Dr. H. Fatkulloh, M.Pd.I', 'Jombang', '1965-05-28', '', 'L', '', '01', '03', '0306,0307', '', '', '', '96.001.095foto.jpg'),
+('99.0001.062', '1234', 'Dr. H. Abd. Kholid, M.Ag', 'Jombang', '1967-09-02', 'Jombang', 'L', 'Islam', '02', '02', '0101', '', '', '', '0702096702foto.jpg'),
+('99.001.089', '1234', 'Ali Priyono, S.Ag, M.Pd.I', 'Lamongan', '1973-04-12', '', 'L', '', '01', '21', '0101,0102', '', '', '', '99.001.089foto.jpg');
 
 -- --------------------------------------------------------
 
@@ -165,7 +166,6 @@ INSERT INTO `dosen` (`id_dosen`, `nidn`, `username`, `password`, `nama_dosen`, `
 --
 
 CREATE TABLE `fakultas` (
-  `id_fakultas` int(11) NOT NULL,
   `kode_fakultas` varchar(10) NOT NULL,
   `nama_fakultas` varchar(100) NOT NULL,
   `Aktif` enum('Y','N') NOT NULL
@@ -175,12 +175,12 @@ CREATE TABLE `fakultas` (
 -- Dumping data untuk tabel `fakultas`
 --
 
-INSERT INTO `fakultas` (`id_fakultas`, `kode_fakultas`, `nama_fakultas`, `Aktif`) VALUES
-(3, '02', 'Fakultas Teknologi Informasi', 'Y'),
-(4, '03', 'Fakultas Pertanian', 'Y'),
-(5, '05', 'Fakultas Ekonomi', 'Y'),
-(6, '01', 'Fakultas Agama Islam', 'Y'),
-(7, '04', 'Fakultas Ilmu Pendidikan', 'Y');
+INSERT INTO `fakultas` (`kode_fakultas`, `nama_fakultas`, `Aktif`) VALUES
+('01', 'Fakultas Agama Islam 2', 'Y'),
+('02', 'Fakultas Teknologi Informasi', 'Y'),
+('03', 'Fakultas Pertanian', 'Y'),
+('04', 'Fakultas Ilmu Pendidikan', 'Y'),
+('05', 'Fakultas Ekonomi', 'Y');
 
 -- --------------------------------------------------------
 
@@ -192,7 +192,7 @@ CREATE TABLE `informasi` (
   `id` int(11) NOT NULL,
   `judul` varchar(255) NOT NULL,
   `isi` text NOT NULL,
-  `waktuubah` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `waktuubah` timestamp NULL DEFAULT current_timestamp(),
   `tampil` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -327,9 +327,8 @@ INSERT INTO `jabatan` (`id_jab`, `nama_jab`) VALUES
 --
 
 CREATE TABLE `jurusan` (
-  `id_jurusan` int(11) NOT NULL,
-  `kode_fakultas` varchar(10) NOT NULL,
   `kode_jurusan` varchar(10) NOT NULL,
+  `kode_fakultas` varchar(10) NOT NULL,
   `nama_jurusan` varchar(100) NOT NULL,
   `akreditasi` varchar(100) NOT NULL,
   `Aktif` enum('Y','N') NOT NULL,
@@ -340,21 +339,23 @@ CREATE TABLE `jurusan` (
 -- Dumping data untuk tabel `jurusan`
 --
 
-INSERT INTO `jurusan` (`id_jurusan`, `kode_fakultas`, `kode_jurusan`, `nama_jurusan`, `akreditasi`, `Aktif`, `kode_masuk`) VALUES
-(1, '02', '0205', 'Sistem Informasi', 'C', 'Y', ''),
-(2, '02', '0204', 'Teknik Informatika', 'C', 'Y', ''),
-(3, '03', '0306', 'Agribisnis', 'Belum', 'Y', ''),
-(6, '03', '0307', 'Agroekoteknologi', 'Belum', 'Y', ''),
-(7, '03', '0309', 'Teknik Pertanian', 'Belum', 'Y', ''),
-(9, '03', '0308', 'Teknologi Hasil Pertanian', 'Belum', 'Y', ''),
-(10, '01', '0101', 'Pendidikan Agama Islam', 'B', 'Y', ''),
-(13, '01', '0102', 'Pendidikan Bahasa Arab', 'C', 'Y', ''),
-(14, '01', '0103', 'Ekonomi Syariah', 'C', 'Y', ''),
-(16, '04', '0410', 'Pendidikan Biologi', 'Belum', 'Y', ''),
-(18, '04', '0411', 'Pendidikan Fisika', 'Belum', 'Y', ''),
-(20, '04', '0412', 'Pendidikan Matematika', 'Belum', 'Y', ''),
-(21, '04', '0413', 'Pendidikan Bahasa Inggris', 'Belum', 'Y', ''),
-(22, '05', '0514', 'Manajemen', 'Belum', 'Y', '');
+INSERT INTO `jurusan` (`kode_jurusan`, `kode_fakultas`, `nama_jurusan`, `akreditasi`, `Aktif`, `kode_masuk`) VALUES
+('0101', '01', 'Pendidikan Agama Islam', 'B', 'Y', ''),
+('0102', '02', 'Pendidikan Bahasa Arab', 'A', 'N', ''),
+('0103', '01', 'Ekonomi Syariah', 'C', 'Y', ''),
+('0204', '02', 'Teknik Informatika', 'C', 'Y', ''),
+('0205', '02', 'Sistem Informasi', 'C', 'Y', ''),
+('02053', '02', 'Teknik Informatika5', 'A', 'Y', ''),
+('0306', '03', 'Agribisnis', 'Belum', 'Y', ''),
+('0307', '03', 'Agroekoteknologi', 'Belum', 'Y', ''),
+('0308', '03', 'Teknologi Hasil Pertanian', 'Belum', 'Y', ''),
+('0309', '03', 'Teknik Pertanian', 'Belum', 'Y', ''),
+('0410', '04', 'Pendidikan Biologi', 'Belum', 'Y', ''),
+('0411', '04', 'Pendidikan Fisika', 'Belum', 'Y', ''),
+('0412', '04', 'Pendidikan Matematika', 'Belum', 'Y', ''),
+('0413', '04', 'Pendidikan Bahasa Inggris', 'Belum', 'Y', ''),
+('0514', '05', 'Manajemen', 'B', 'Y', ''),
+('1111', '05', 'Kearsipan Digital', 'A', 'Y', '');
 
 -- --------------------------------------------------------
 
@@ -5917,28 +5918,29 @@ INSERT INTO `ruang` (`id_ruang`, `kode_ruang`, `nama_ruang`, `kode_jurusan`, `ka
 
 CREATE TABLE `skripsi` (
   `nim` varchar(16) NOT NULL,
-  `judul1` text,
+  `judul1` text DEFAULT NULL,
   `desjudul1` text NOT NULL,
-  `judul2` text,
+  `judul2` text DEFAULT NULL,
   `desjudul2` text NOT NULL,
   `status_judul1` tinyint(4) NOT NULL,
   `status_judul2` tinyint(4) NOT NULL,
   `disetujui` tinyint(4) DEFAULT NULL,
-  `prodi` tinyint(4) DEFAULT NULL,
-  `kelas` tinyint(4) DEFAULT NULL,
+  `prodi` varchar(100) DEFAULT NULL,
+  `kelas` varchar(50) DEFAULT NULL,
   `mahasiswa` varchar(255) DEFAULT NULL,
-  `pembimbing1` tinyint(4) DEFAULT NULL,
-  `pembimbing2` tinyint(4) DEFAULT NULL
+  `pembimbing1` varchar(50) DEFAULT NULL,
+  `pembimbing2` varchar(50) DEFAULT NULL,
+  `file_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `skripsi`
 --
 
-INSERT INTO `skripsi` (`nim`, `judul1`, `desjudul1`, `judul2`, `desjudul2`, `status_judul1`, `status_judul2`, `disetujui`, `prodi`, `kelas`, `mahasiswa`, `pembimbing1`, `pembimbing2`) VALUES
-('1402040424', 'Deteksi Daging Dengan Arduino', 'Deteksi Daging Dengan Arduino', 'Ramal Kematangan Tomat Dengan Arduino Berbasis Android', 'Ramal Kematangan Tomat Dengan Arduino Berbasis Android', 2, 1, NULL, 1, NULL, 'Fika Ridaul Maulayya', 2, 3),
-('1402040425', 'Membangun Sistem Perangkat Lunak untuk Efisiensi Biaya Proyek Pembangunan dengan Memanfaatkan FLOAT pada Metode Analisis Jaringan Kerja', 'Membangun Sistem Perangkat Lunak untuk Efisiensi Biaya Proyek Pembangunan dengan Memanfaatkan FLOAT pada Metode Analisis Jaringan Kerja', 'Sistem Informasi Eksekutif untuk Perencanaan Tata Letak Anak Cabang Perusahaan (Studi Kasus Bank PD. BPR Bapas 69 Magelang)', 'Sistem Informasi Eksekutif untuk Perencanaan Tata Letak Anak Cabang Perusahaan (Studi Kasus Bank PD. BPR Bapas 69 Magelang)', 1, 0, NULL, 1, 1, 'Mahsun jauhari', 3, 2),
-('1402040426', 'Deteksi Muka Depan Manusia dari Sebuah Citra Berwarna dengan Template Matching', 'Deteksi Muka Depan Manusia dari Sebuah Citra Berwarna dengan Template Matching', 'Implementasi SMS gateway dengan menggunakan bahasa alami dalam sistem informasi perdagangan (Studi Kasus Toko Amanna)', 'Implementasi SMS gateway dengan menggunakan bahasa alami dalam sistem informasi perdagangan (Studi Kasus Toko Amanna)', 1, 2, NULL, 1, 1, 'Fkri Rofiudin', 5, 5);
+INSERT INTO `skripsi` (`nim`, `judul1`, `desjudul1`, `judul2`, `desjudul2`, `status_judul1`, `status_judul2`, `disetujui`, `prodi`, `kelas`, `mahasiswa`, `pembimbing1`, `pembimbing2`, `file_url`) VALUES
+('1402040425', 'Membangun Sistem Perangkat Lunak untuk Efisiensi Biaya Proyek Pembangunan dengan Memanfaatkan FLOAT pada Metode Analisis Jaringan Kerja', 'Membangun Sistem Perangkat Lunak untuk Efisiensi Biaya Proyek Pembangunan dengan Memanfaatkan FLOAT pada Metode Analisis Jaringan Kerja', 'Sistem Informasi Eksekutif untuk Perencanaan Tata Letak Anak Cabang Perusahaan (Studi Kasus Bank PD. BPR Bapas 69 Magelang)', 'Sistem Informasi Eksekutif untuk Perencanaan Tata Letak Anak Cabang Perusahaan (Studi Kasus Bank PD. BPR Bapas 69 Magelang)', 1, 2, NULL, '0412', '1', 'Mahsun jauhari', '3', '2', '1402040425.txt'),
+('1402040426', 'Deteksi Muka Depan Manusia dari Sebuah Citra Berwarna dengan Template Matching', 'Deteksi Muka Depan Manusia dari Sebuah Citra Berwarna dengan Template Matching', 'Implementasi SMS gateway dengan menggunakan bahasa alami dalam sistem informasi perdagangan (Studi Kasus Toko Amanna)', 'Implementasi SMS gateway dengan menggunakan bahasa alami dalam sistem informasi perdagangan (Studi Kasus Toko Amanna)', 1, 2, NULL, '0514', '1', 'Fkri Rofiudin', '5', '5', ''),
+('1402040432', 'Judul saya', 'saf111', '222', 'sdf11', 1, 1, NULL, '0514', '2', 'Ali Mustofa', '197808232001121010', '197808232001121016', '1402040432.txt');
 
 -- --------------------------------------------------------
 
@@ -6052,6 +6054,41 @@ INSERT INTO `tbl_admin` (`id`, `username`, `pass`, `nama`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `tbl_dosen`
+--
+
+CREATE TABLE `tbl_dosen` (
+  `nip` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `nama_dosen` varchar(100) NOT NULL,
+  `tanggal_lahir` date NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `no_telepon` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_dosen`
+--
+
+INSERT INTO `tbl_dosen` (`nip`, `password`, `nama_dosen`, `tanggal_lahir`, `email`, `no_telepon`) VALUES
+('197808232001121010', 'lll', 'Mas dadang Enjat Munajat', '1970-06-05', 'mas.dadang.enjat.munajat@gmail.com', '080912345610'),
+('197808232001121011', 'admin', 'Hasan Bisry Isa Alfaris, S.Kom.', '1970-06-06', 'hasan.bisry.isa.alfaris.s.kom.@gmail.com', '080912345611'),
+('197808232001121012', 'admin', 'Agus Syifaun Najah, M.Kom.', '1970-06-07', 'agus.syifaun.najah.m.kom.@gmail.com', '080912345612'),
+('197808232001121013', 'admin', 'Ponari Isno, SE., S.Kom.', '1970-06-08', 'ponari.isno.se.s.kom.@gmail.com', '080912345613'),
+('197808232001121014', 'admin', 'Tholib Hariono, S.Kom.', '1970-06-09', 'tholib.hariono.s.kom.@gmail.com', '080912345614'),
+('197808232001121015', 'admin', 'Sujono, S.Kom.', '1970-06-10', 'sujono.s.kom.@gmail.com', '080912345615'),
+('197808232001121016', 'admin', 'Mochammad Chumaidi, M.M.', '1970-06-11', 'mochammad.chumaidi.m.m.@gmail.com', '080912345616'),
+('197808232001121017', 'admin', 'Primaadi Airlangga, M.IT', '1970-06-12', 'primaadi.airlangga.m.it@gmail.com', '080912345617'),
+('197808232001121018', 'admin', 'H. Muhyiddin Zainul Arifin, SH, SE, M.M.', '1970-06-13', 'h.muhyiddin.zainul.arifin.sh.se.m.m.@gmail.com', '080912345618'),
+('197808232001121019', 'admin', 'Dr. H. Chairul Anam, S.Kom., S.E., M.Si.', '1970-06-14', 'dr.h.chairul.anam.s.kom.s.e.m.si.@gmail.com', '080912345619'),
+('197808232001121020', 'admin', 'Siti Sufaidah, S. Kom., M.Si.', '1970-06-15', 'siti.sufaidah.s.kom.m.si.@gmail.com', '080912345620'),
+('197808232001121021', 'admin', 'Ir. Zulfikar, M.Si.', '1970-06-16', 'ir.zulfikar.m.si.@gmail.com', '080912345621'),
+('197808232001121022', 'admin', 'Munawarah, S.Kom., M.Si.', '1970-06-17', 'munawarah.s.kom.m.si.@gmail.com', '080912345622'),
+('197808232001121023', 'admin', 'Ir. Moch. Noerhadi Sudjoni, M.B.A.', '1970-06-18', 'ir.moch.noerhadi.sudjoni.m.b.a.@gmail.com', '080912345623');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `tbl_informasi`
 --
 
@@ -6106,7 +6143,7 @@ CREATE TABLE `tbl_mahasiswa` (
   `password` varchar(100) NOT NULL,
   `nama_mhs` varchar(150) NOT NULL,
   `kode_tahun` varchar(150) NOT NULL,
-  `kode_jurusan` int(100) NOT NULL,
+  `kode_jurusan` varchar(100) NOT NULL,
   `semester` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -6115,17 +6152,76 @@ CREATE TABLE `tbl_mahasiswa` (
 --
 
 INSERT INTO `tbl_mahasiswa` (`nim`, `password`, `nama_mhs`, `kode_tahun`, `kode_jurusan`, `semester`) VALUES
-('1402040422', 'admin', 'Faisal Mahadi', '20124', 205, 6),
-('1402040424', 'admin', 'Fika Ridaul Maulayya ', '20142', 205, 6),
-('1402040425', 'admin', 'Mahsun jauhari', '20142', 205, 6),
-('1402040426', 'admin', 'Fkri Rofiudin', '20142', 205, 6),
-('1402040427', 'admin', 'Candra Kirana', '20142', 205, 6),
-('1402040428', 'admin', 'M Yazidinniam', '20142', 205, 6),
-('1402040429', 'maulayyacyber17', 'Kurnia Andi Nugroho', '20142', 205, 6),
-('1402040430', 'admin', 'rootImam Syafii', '20142', 205, 6),
-('1402040431', 'maulayyacyber17', 'Teguh Santoso', '20142', 205, 6),
-('1402040432', 'maulayyacyber17', 'Ali Mustofa', '20142', 205, 6),
-('1402040433', 'admin', 'Hadlik Lutfi', '20142', 205, 6);
+('123', '1234', 'smp.bandung@gmail.com', '21', '1111', 123),
+('1402040425', 'admin', 'Mahsun jauhari123', '20142', '0412', 12),
+('1402040426', 'admin', 'Fkri Rofiudin', '20142', '0514', 6),
+('1402040427', 'admin', 'Candra Kirana', '20142', '1111', 6),
+('1402040428', 'admin', 'M Yazidinniam', '20142', '1111', 6),
+('1402040429', 'maulayyacyber17', 'Kurnia Andi Nugroho', '20142', '0412', 6),
+('1402040430', 'admin', 'rootImam Syafii', '20142', '0514', 6),
+('1402040431', 'maulayyacyber17', 'Teguh Santoso', '20142', '0514', 6),
+('1402040432', 'maulayyacyber17', 'Ali Mustofa', '20142', '0514', 6),
+('1402040433', 'admin', 'Hadlik Lutfi', '20142', '205', 6),
+('2113191079', '1234', 'smp.bandung@gmail.com', '2021', '411', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pembimbing`
+--
+
+CREATE TABLE `tbl_pembimbing` (
+  `id` int(11) NOT NULL,
+  `nip` varchar(100) NOT NULL,
+  `no_pembimbing` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_pembimbing`
+--
+
+INSERT INTO `tbl_pembimbing` (`id`, `nip`, `no_pembimbing`) VALUES
+(2, '', 1),
+(3, '197808232001121011', 2),
+(4, '197808232001121010', 1),
+(5, '197808232001121016', 2),
+(6, '197808232001121018', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pengajuan`
+--
+
+CREATE TABLE `tbl_pengajuan` (
+  `id` int(11) NOT NULL,
+  `nim` int(11) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_pengaturan`
+--
+
+CREATE TABLE `tbl_pengaturan` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `isi` text NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tbl_pengaturan`
+--
+
+INSERT INTO `tbl_pengaturan` (`id`, `nama`, `isi`, `keterangan`) VALUES
+(3, 'prodi_nav', '1111||0410||0514||0412', 'Mengatur Navigasi Halaman Utama Menu Prodi'),
+(4, 'header', 'SIJURI Kelompok 5', 'Mengatur Nama Aplikasi'),
+(5, 'footer', 'SIJURI © 2021 Kelompok 5, All Rights Reserved.', 'Mengatur Footer Aplikasi');
 
 -- --------------------------------------------------------
 
@@ -6783,7 +6879,7 @@ INSERT INTO `user_pmb` (`id_user`, `username`, `password`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `view_mahasiswa`
+-- Stand-in struktur untuk tampilan `view_mahasiswa`
 -- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `view_mahasiswa` (
@@ -6799,11 +6895,11 @@ CREATE TABLE `view_mahasiswa` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `vpembimbing`
+-- Stand-in struktur untuk tampilan `vpembimbing`
 -- (Lihat di bawah untuk tampilan aktual)
 --
 CREATE TABLE `vpembimbing` (
-`pembimbing` tinyint(4)
+`pembimbing` varchar(50)
 ,`disetujui` tinyint(4)
 );
 
@@ -6814,7 +6910,7 @@ CREATE TABLE `vpembimbing` (
 --
 DROP TABLE IF EXISTS `view_mahasiswa`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_mahasiswa`  AS  select `mahasiswa`.`nim` AS `nim`,`mahasiswa`.`username` AS `username`,`mahasiswa`.`password` AS `password`,`mahasiswa`.`nama_mhs` AS `nama_mhs`,`mahasiswa`.`kode_tahun` AS `kode_tahun`,`mahasiswa`.`kode_jurusan` AS `kode_jurusan`,`mahasiswa`.`semester` AS `semester` from `mahasiswa` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_mahasiswa`  AS SELECT `mahasiswa`.`nim` AS `nim`, `mahasiswa`.`username` AS `username`, `mahasiswa`.`password` AS `password`, `mahasiswa`.`nama_mhs` AS `nama_mhs`, `mahasiswa`.`kode_tahun` AS `kode_tahun`, `mahasiswa`.`kode_jurusan` AS `kode_jurusan`, `mahasiswa`.`semester` AS `semester` FROM `mahasiswa` ;
 
 -- --------------------------------------------------------
 
@@ -6823,324 +6919,348 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `vpembimbing`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vpembimbing`  AS  select `skripsi`.`pembimbing1` AS `pembimbing`,`skripsi`.`disetujui` AS `disetujui` from `skripsi` union all select `skripsi`.`pembimbing2` AS `pembimbing`,`skripsi`.`disetujui` AS `disetujui` from `skripsi` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vpembimbing`  AS SELECT `skripsi`.`pembimbing1` AS `pembimbing`, `skripsi`.`disetujui` AS `disetujui` FROM `skripsi` ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `biaya`
+-- Indeks untuk tabel `biaya`
 --
 ALTER TABLE `biaya`
   ADD PRIMARY KEY (`id_biaya`);
 
 --
--- Indexes for table `dosen`
+-- Indeks untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
-  ADD PRIMARY KEY (`id_dosen`);
+  ADD PRIMARY KEY (`nidn`);
 
 --
--- Indexes for table `fakultas`
+-- Indeks untuk tabel `fakultas`
 --
 ALTER TABLE `fakultas`
-  ADD PRIMARY KEY (`id_fakultas`);
+  ADD PRIMARY KEY (`kode_fakultas`);
 
 --
--- Indexes for table `informasi`
+-- Indeks untuk tabel `informasi`
 --
 ALTER TABLE `informasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ipk`
+-- Indeks untuk tabel `ipk`
 --
 ALTER TABLE `ipk`
   ADD PRIMARY KEY (`nim`,`kode_tahun`,`semester`);
 
 --
--- Indexes for table `jabatan`
+-- Indeks untuk tabel `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id_jab`);
 
 --
--- Indexes for table `jurusan`
+-- Indeks untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
-  ADD PRIMARY KEY (`id_jurusan`);
+  ADD PRIMARY KEY (`kode_jurusan`);
 
 --
--- Indexes for table `kelas`
+-- Indeks untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`);
 
 --
--- Indexes for table `kelulusan`
+-- Indeks untuk tabel `kelulusan`
 --
 ALTER TABLE `kelulusan`
   ADD PRIMARY KEY (`id_lulus`);
 
 --
--- Indexes for table `kode_masuk`
+-- Indeks untuk tabel `kode_masuk`
 --
 ALTER TABLE `kode_masuk`
   ADD PRIMARY KEY (`id_kode_masuk`);
 
 --
--- Indexes for table `krs`
+-- Indeks untuk tabel `krs`
 --
 ALTER TABLE `krs`
   ADD PRIMARY KEY (`id_krs`);
 
 --
--- Indexes for table `mahasiswa`
+-- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mahasiswa`);
 
 --
--- Indexes for table `matakuliah`
+-- Indeks untuk tabel `matakuliah`
 --
 ALTER TABLE `matakuliah`
   ADD PRIMARY KEY (`id_mk`);
 
 --
--- Indexes for table `nilai`
+-- Indeks untuk tabel `nilai`
 --
 ALTER TABLE `nilai`
   ADD PRIMARY KEY (`id_nilai`);
 
 --
--- Indexes for table `pengumuman`
+-- Indeks untuk tabel `pengumuman`
 --
 ALTER TABLE `pengumuman`
   ADD PRIMARY KEY (`id_info`);
 
 --
--- Indexes for table `predikat_lulus`
+-- Indeks untuk tabel `predikat_lulus`
 --
 ALTER TABLE `predikat_lulus`
   ADD PRIMARY KEY (`id_predikat`);
 
 --
--- Indexes for table `registrasi`
+-- Indeks untuk tabel `registrasi`
 --
 ALTER TABLE `registrasi`
   ADD PRIMARY KEY (`id_reg`);
 
 --
--- Indexes for table `ruang`
+-- Indeks untuk tabel `ruang`
 --
 ALTER TABLE `ruang`
   ADD PRIMARY KEY (`id_ruang`);
 
 --
--- Indexes for table `skripsi`
+-- Indeks untuk tabel `skripsi`
 --
 ALTER TABLE `skripsi`
   ADD PRIMARY KEY (`nim`);
 
 --
--- Indexes for table `spi_category`
+-- Indeks untuk tabel `spi_category`
 --
 ALTER TABLE `spi_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `statusmhs`
+-- Indeks untuk tabel `statusmhs`
 --
 ALTER TABLE `statusmhs`
   ADD PRIMARY KEY (`id_statusmhs`);
 
 --
--- Indexes for table `tahun_akademik`
+-- Indeks untuk tabel `tahun_akademik`
 --
 ALTER TABLE `tahun_akademik`
   ADD PRIMARY KEY (`id_tahun`);
 
 --
--- Indexes for table `tbl_admin`
+-- Indeks untuk tabel `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_informasi`
+-- Indeks untuk tabel `tbl_dosen`
+--
+ALTER TABLE `tbl_dosen`
+  ADD PRIMARY KEY (`nip`);
+
+--
+-- Indeks untuk tabel `tbl_informasi`
 --
 ALTER TABLE `tbl_informasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_jadwal`
+-- Indeks untuk tabel `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
--- Indexes for table `tbl_mahasiswa`
+-- Indeks untuk tabel `tbl_mahasiswa`
 --
 ALTER TABLE `tbl_mahasiswa`
   ADD PRIMARY KEY (`nim`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `tbl_pembimbing`
+--
+ALTER TABLE `tbl_pembimbing`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tbl_pengajuan`
+--
+ALTER TABLE `tbl_pengajuan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tbl_pengaturan`
+--
+ALTER TABLE `tbl_pengaturan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `user_pmb`
+-- Indeks untuk tabel `user_pmb`
 --
 ALTER TABLE `user_pmb`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `biaya`
+-- AUTO_INCREMENT untuk tabel `biaya`
 --
 ALTER TABLE `biaya`
   MODIFY `id_biaya` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `dosen`
---
-ALTER TABLE `dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
-
---
--- AUTO_INCREMENT for table `fakultas`
---
-ALTER TABLE `fakultas`
-  MODIFY `id_fakultas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `informasi`
+-- AUTO_INCREMENT untuk tabel `informasi`
 --
 ALTER TABLE `informasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `jurusan`
---
-ALTER TABLE `jurusan`
-  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `kelas`
+-- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `id_kelas` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `kelulusan`
+-- AUTO_INCREMENT untuk tabel `kelulusan`
 --
 ALTER TABLE `kelulusan`
   MODIFY `id_lulus` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `kode_masuk`
+-- AUTO_INCREMENT untuk tabel `kode_masuk`
 --
 ALTER TABLE `kode_masuk`
   MODIFY `id_kode_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `krs`
+-- AUTO_INCREMENT untuk tabel `krs`
 --
 ALTER TABLE `krs`
   MODIFY `id_krs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3929;
 
 --
--- AUTO_INCREMENT for table `mahasiswa`
+-- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=569;
 
 --
--- AUTO_INCREMENT for table `matakuliah`
+-- AUTO_INCREMENT untuk tabel `matakuliah`
 --
 ALTER TABLE `matakuliah`
   MODIFY `id_mk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=420;
 
 --
--- AUTO_INCREMENT for table `nilai`
+-- AUTO_INCREMENT untuk tabel `nilai`
 --
 ALTER TABLE `nilai`
   MODIFY `id_nilai` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `pengumuman`
+-- AUTO_INCREMENT untuk tabel `pengumuman`
 --
 ALTER TABLE `pengumuman`
   MODIFY `id_info` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `predikat_lulus`
+-- AUTO_INCREMENT untuk tabel `predikat_lulus`
 --
 ALTER TABLE `predikat_lulus`
   MODIFY `id_predikat` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `registrasi`
+-- AUTO_INCREMENT untuk tabel `registrasi`
 --
 ALTER TABLE `registrasi`
   MODIFY `id_reg` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=480;
 
 --
--- AUTO_INCREMENT for table `ruang`
+-- AUTO_INCREMENT untuk tabel `ruang`
 --
 ALTER TABLE `ruang`
   MODIFY `id_ruang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `spi_category`
+-- AUTO_INCREMENT untuk tabel `spi_category`
 --
 ALTER TABLE `spi_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `statusmhs`
+-- AUTO_INCREMENT untuk tabel `statusmhs`
 --
 ALTER TABLE `statusmhs`
   MODIFY `id_statusmhs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tahun_akademik`
+-- AUTO_INCREMENT untuk tabel `tahun_akademik`
 --
 ALTER TABLE `tahun_akademik`
   MODIFY `id_tahun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT untuk tabel `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `id` int(150) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_informasi`
+-- AUTO_INCREMENT untuk tabel `tbl_informasi`
 --
 ALTER TABLE `tbl_informasi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_jadwal`
+-- AUTO_INCREMENT untuk tabel `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
   MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `tbl_pembimbing`
+--
+ALTER TABLE `tbl_pembimbing`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_pengajuan`
+--
+ALTER TABLE `tbl_pengajuan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `tbl_pengaturan`
+--
+ALTER TABLE `tbl_pengaturan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=807;
 
 --
--- AUTO_INCREMENT for table `user_pmb`
+-- AUTO_INCREMENT untuk tabel `user_pmb`
 --
 ALTER TABLE `user_pmb`
   MODIFY `id_user` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

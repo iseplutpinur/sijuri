@@ -8,18 +8,10 @@ include('../../library/environment.php');
 include('../../library/database.php');
 
 if ($_SESSION['nip'] == true) {
-
-	$s = $connect->prepare("UPDATE skripsi SET status_judul2 = ? WHERE nim = ?");
-
-	$s->bind_param(
-		'ii',
-
-		$_GET['data'],
-		$_GET['nim']
-
-	);
-
-	if (!$s->execute()) {
+	$data = $_GET['data'];
+	$nim = $_GET['nim'];
+	$query = "UPDATE skripsi SET status_judul2 = '$data' WHERE nim = '$nim'";
+	if (mysqli_query($connect, $query)) {
 		header('Location: ../media.php?action=lihat-judul&nim=' . $_GET['nim'] . '');
 	} else {
 		header('Location: ../media.php?action=lihat-judul&nim=' . $_GET['nim'] . '');

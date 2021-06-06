@@ -221,6 +221,7 @@ while ($row = mysqli_fetch_array($result)) {
                     <div class="form-group">
                       <label for="sel1">Pilihan Pembimbing 1:</label>
                       <select class="form-control" name='pembimbing1' required>
+                        <option value="">Tidak Ada</option>
                         <?php
                         $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '1'";
                         $result =  mysqli_query($connect, $query);
@@ -238,6 +239,7 @@ while ($row = mysqli_fetch_array($result)) {
                     <div class="form-group">
                       <label for="sel1">Pilihan Pembimbing 2:</label>
                       <select class="form-control" name='pembimbing2' required>
+                        <option value="">Tidak Ada</option>
                         <?php
                         $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '2'";
                         $result =  mysqli_query($connect, $query);

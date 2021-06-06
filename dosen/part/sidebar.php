@@ -8,19 +8,19 @@
             </div>
 
             <ul class="nav">
-                <li <?= ($sb_active == 'dashboard') ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Dashboard']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=dashboard">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li <?= ($sb_active == 'profile-dosen') ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Profile Dosen']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=profile-dosen">
                         <i class="pe-7s-user"></i>
                         <p>Profile Dosen</p>
                     </a>
                 </li>
-                <li <?= ($sb_active == 'data-pengajuan-judul') ? 'class="active"' : '' ?>>
+                <li <?= in_array($title, ['Data Pengajuan Judul', 'Lihat Judul']) ? 'class="active"' : '' ?>>
                     <a href="media.php?action=data-pengajuan-judul">
                         <i class="pe-7s-server"></i>
                         <p>Data Pengajuan Judul</p>
