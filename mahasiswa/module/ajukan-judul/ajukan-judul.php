@@ -11,7 +11,7 @@
 							<div class="panel-body">
 								<div class="container">
 									<div class="row">
-										<form action="module/simpan-judul-baru.php" method="POST" enctype='multipart/form-data'>
+										<form action="module/ajukan-judul/simpan-judul-baru.php" method="POST" enctype='multipart/form-data'>
 											<div class="row">
 
 												<div class="col-lg-6">
@@ -27,7 +27,7 @@
 														<label for="sel1">Pilihan Pembimbing 1:</label>
 														<select class="form-control" name='pembimbing1' required>
 															<?php
-															$query = "SELECT tbl_pembimbing.id, tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '1'";
+															$query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '1'";
 															$result =  mysqli_query($connect, $query);
 															if ($result) {
 																while ($row = mysqli_fetch_array($result)) {

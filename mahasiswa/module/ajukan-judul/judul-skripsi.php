@@ -26,7 +26,6 @@ while ($row = mysqli_fetch_array($result)) {
   $lampiran = $row['file_url'];
   $lampiran = $lampiran ? '<a href="../file_up/' . $lampiran . '" style="text-decoration:none; color:#21c2e5; font-weight:bold" target="_blank"> Download Here</a>' : "";
 }
-
 error_reporting('0');
 //status judul 1
 if ($status1 == '0') {
@@ -144,16 +143,6 @@ while ($row = mysqli_fetch_array($result)) {
                           } ?></td>
                     </tr>
                     <tr>
-                      <td>Dosen Pembimbing</td>
-                      <td><?php $i = 0;
-                          foreach ($kPembimbing1 as $pemb1) {
-                            if ($pembimbing1 == $i++)
-                              echo $pemb1;
-                          }
-                          ?>
-                      </td>
-                    </tr>
-                    <tr>
                       <td>Status Judul </td>
                       <td><?php if (isset($button1)) {
                             echo $button1;
@@ -195,16 +184,6 @@ while ($row = mysqli_fetch_array($result)) {
                           } ?></td>
                     </tr>
                     <tr>
-                      <td>Dosen Pembimbing</td>
-                      <td><?php $i = 0;
-                          foreach ($kPembimbing2 as $pemb2) {
-                            if ($pembimbing2 == $i++)
-                              echo $pemb2;
-                          }
-                          ?>
-                      </td>
-                    </tr>
-                    <tr>
                       <td>Status Judul</td>
                       <td><?php if (isset($button2)) {
                             echo $button2;
@@ -215,13 +194,13 @@ while ($row = mysqli_fetch_array($result)) {
                   </tbody>
                 </table>
               </div>
-              <a href="media.php?action=edit-judul2" type="button" class="btn btn-success" style="border-color: #158873;color: #fff;"><i class="pe-7s-config"></i> Ubah Data</a>
+              <a href="media.php?action=edit-judul2" type="button" class="btn btn-success" style="border-color: #158873;color: #fff; font-family:sans-serif"><i class="pe-7s-config"></i> Ubah Data</a>
 
               <br>
               <br>
               <div class="alert alert-info" role="alert" style="font-family:sans-serif;background-color:#158873; color:white">Lampiran File <?= $lampiran ?></div>
               <div class="table-responsive" style="font-family: sans-serif;">
-                <form action="module/simpan-file-ubah.php" method="POST" enctype='multipart/form-data'>
+                <form action="module/ajukan-judul/update-file.php" method="POST" enctype='multipart/form-data'>
                   <input type="text" hidden value="<?php echo $var; ?>" name="nim">
                   <div class="form-group">
                     <span class="control-fileupload">
@@ -232,6 +211,74 @@ while ($row = mysqli_fetch_array($result)) {
                   <button type="submit" class="btn btn-success">Upload File</button>
                 </form>
               </div>
+              <br>
+              <br>
+              <div class="alert alert-info" role="alert" style="font-family:sans-serif;background-color:#158873; color:white">Pembimbing</div>
+
+              <div class="row" style="font-family: sans-serif;">
+                <form action="module/ajukan-judul/update-pembimbing.php" method="POST" id="pembimbing">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="sel1">Pilihan Pembimbing 1:</label>
+                      <select class="form-control" name='pembimbing1' required>
+                        <?php
+                        $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '1'";
+                        $result =  mysqli_query($connect, $query);
+                        if ($result) {
+                          while ($row = mysqli_fetch_array($result)) {
+                            $selected = $pembimbing1 == $row['nip'] ? 'selected' : '';
+                            echo '<option value="' . $row['nip'] . '"' . $selected . '>' . $row['nama_dosen'] . '</option>';
+                          }
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="sel1">Pilihan Pembimbing 2:</label>
+                      <select class="form-control" name='pembimbing2' required>
+                        <?php
+                        $query = "SELECT tbl_dosen.nip, tbl_dosen.nama_dosen FROM tbl_pembimbing join tbl_dosen on tbl_dosen.nip = tbl_pembimbing.nip WHERE tbl_pembimbing.no_pembimbing = '2'";
+                        $result =  mysqli_query($connect, $query);
+                        if ($result) {
+                          while ($row = mysqli_fetch_array($result)) {
+                            $selected = $pembimbing2 == $row['nip'] ? 'selected' : '';
+                            echo '<option value="' . $row['nip'] . '"' . $selected . '>' . $row['nama_dosen'] . '</option>';
+                          }
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <button type="submit" form="pembimbing" class="btn btn-success" style="font-family:sans-serif">Simpan Pembimbing</button>
+              <br>
+              <br>
+              <div class="alert alert-info" role="alert" style="font-family:sans-serif;background-color:#158873; color:white">Kelas</div>
+              <form action="module/ajukan-judul/update-kelas.php" method="POST" id="kelas">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="sel1" style="font-family:sans-serif">Kelas</label>
+                      <select class="form-control" name='kelas' required>
+                        <?php $i = 0;
+                        foreach ($kKelas as $kelasku) {
+                          if ($i == $kelas) {
+                            echo "<option style='width:100%;' value='$i' selected='selected'>$kelasku</option>";
+                          } else {
+                            echo "<option style='width:100%;' value='$i'>$kelasku</option>";
+                          }
+                          $i++;
+                        }
+                        ?>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" form="kelas" class="btn btn-success" style="font-family:sans-serif">Simpan Kelas</button>
+              </form>
             </div>
           </div>
         <?php } ?>

@@ -1,15 +1,15 @@
 <?php
 session_start();
 //include config
-include_once('../../library/config.php');
+include_once('../../../library/config.php');
 //include environment
-include('../../library/environment.php');
+include('../../../library/environment.php');
 //include database
-include('../../library/database.php');
+include('../../../library/database.php');
 
 if ($_SESSION['nim'] == true) {
 	// upload file
-	$targetDir = "../../file_up/";
+	$targetDir = "../../../file_up/";
 	if (!is_dir($targetDir)) {
 		if (!mkdir($targetDir, 0777, true)) {
 			throw new Exception("Unable to upload your document. We were unable to create the required directories");
@@ -18,7 +18,7 @@ if ($_SESSION['nim'] == true) {
 	$f_ext =  $_FILES['fileinput']['name'];
 	$f_ext =  explode(".", $f_ext);
 	$f_ext =  end($f_ext);
-	$n_file = $_POST['nim'] . "." . $f_ext;
+	$n_file = $_SESSION['nim'] . "." . $f_ext;
 
 	$targetFile = $targetDir . $n_file;
 	$fileType = pathinfo($targetFile, PATHINFO_EXTENSION);
@@ -53,11 +53,11 @@ if ($_SESSION['nim'] == true) {
 	$query = mysqli_query($connect, $query);
 
 	if ($query) {
-		header('Location:../media.php?action=ajukan-judul');
+		header('Location:../../media.php?action=judul-skripsi');
 	} else {
-		header('Location:../media.php?action=ajukan-judul	');
+		header('Location:../../media.php?action=judul-skripsi	');
 	}
 } else {
-	header('Location:media.php?action=ajukan-judul');
+	header('Location:media.php?action=judul-skripsi');
 	exit;
 }

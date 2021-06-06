@@ -42,19 +42,19 @@ elseif ($_GET['action'] == "profile-mahasiswa") {
 elseif ($_GET['action'] == "judul-skripsi") {
     $icon = '<i class="pe-7s-note2"></i> ';
     $title = 'Judul Skripsi';
-    $main_content = "module/judul-skripsi.php";
+    $main_content = "module/ajukan-judul/judul-skripsi.php";
 } elseif ($_GET['action'] == "edit-judul1") {
     $icon = '<i class="pe-7s-note2"></i> ';
     $title = 'Edit Judul 1';
-    $main_content = "module/edit-judul1.php";
+    $main_content = "module/ajukan-judul/edit-judul1.php";
 } elseif ($_GET['action'] == "edit-judul2") {
     $icon = '<i class="pe-7s-note2"></i> ';
     $title = 'Edit Judul 2';
-    $main_content = "module/edit-judul2.php";
+    $main_content = "module/ajukan-judul/edit-judul2.php";
 } elseif ($_GET['action'] == "ajukan-judul") {
     $icon = '<i class="pe-7s-note2"></i> ';
     $title = 'Ajukan Judul';
-    $main_content = "module/ajukan-judul.php";
+    $main_content = "module/ajukan-judul/ajukan-judul.php";
 }
 // Dosen Pembimbing
 elseif ($_GET['action'] == "dosen-pembimbing") {
