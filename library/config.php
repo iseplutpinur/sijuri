@@ -4,11 +4,11 @@
 $config = ['base_url' => "http://localhost/aplikasi/project/sijuri/"];
 
 //create array kaprodi
-$kaprodi 	= array("belum diisi", "SI", "TI");
+$kaprodi     = array("belum diisi", "SI", "TI");
 //create array status judul
-$disetujui	= array("Belum", "judul1", "judul2");
+$disetujui    = array("Belum", "judul1", "judul2");
 //create array kelas
-$kelas 		= array("Transfer", "Reguler", "Belum Diisi");
+$kelas         = array("Transfer", "Reguler", "Belum Diisi");
 
 $kProdi = array("belum diisi", "SI", "TI");
 

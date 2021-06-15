@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Export Data</title>
+    <style>
+        .str {
+            mso-number-format: \@;
+        }
+
+        .number {
+            mso-number-format: \#;
+        }
+
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="container">
+        <div class="page-header text-center">
+            <h4>FORM LAPORAN RENCANA ANGGARAN SMP Cimahi (9LN0101)<br></h4>
+        </div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th> Identifier</th>
+                    <th> Aktifitas</th>
+                    <th> Kode Sub Aktifitas</th>
+                    <th> Nama Sub Aktifitas</th>
+                    <th> Jumlah</th>
+                    <th> Satuan</th>
+                    <th> Jumlah</th>
+                    <th> Satuan</th>
+                    <th> Jumlah</th>
+                    <th> Satuan</th>
+                    <th> Jumlah</th>
+                    <th> Satuan</th>
+                    <th> Ringgit</th>
+                    <th> Rupiah</th>
+                    <th> Total Ringgit</th>
+                    <th> Total Rupiah</th>
+                    <th> Prioritas</th>
+                    <th> Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                                    <tr>
+                        <td class="number">55</td>
+                        <td class="str">Pengembangan Perpustakaan </td>
+                        <td class="str">3.1.1</td>
+                        <td class="str">Pengadaan Buku Teks Siswa (Buku Pelajaran) 1</td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="str"></td>
+                        <td class="str"></td>
+                    </tr>
+                                    <tr>
+                        <td class="number">56</td>
+                        <td class="str">Pengembangan Perpustakaan </td>
+                        <td class="str">3.1.1.1</td>
+                        <td class="str">Kelas IX 1</td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="str"></td>
+                        <td class="str"></td>
+                    </tr>
+                                    <tr>
+                        <td class="number">57</td>
+                        <td class="str">Pengembangan Perpustakaan </td>
+                        <td class="str">3.1.1.1.1</td>
+                        <td class="str">Pendidikan Agama dan Budi Pekerti 1</td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="number">0</td>
+                        <td class="str"></td>
+                        <td class="str"></td>
+                    </tr>
+                                    <tr>
+                        <td class="number">58</td>
+                        <td class="str">Pengembangan Perpustakaan </td>
+                        <td class="str">3.1.1.1.1.1</td>
+                        <td class="str">Agama Islam 1</td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">1</td>
+                        <td class="str"></td>
+                        <td class="number">11.54</td>
+                        <td class="number">40390</td>
+                        <td class="number">11.54</td>
+                        <td class="number">40390</td>
+                        <td class="str"></td>
+                        <td class="str"></td>
+                    </tr>
+                            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

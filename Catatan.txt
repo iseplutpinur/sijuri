@@ -29,3 +29,7 @@ Mahasiswa
 2. Judul
 fix sidebar line 49
 <li <?= in_array($title, ['Dosen Pembimbing', 'Tambah pembimbing']) ? 'class="active"' : '' ?>>
+
+
+1. jurusan mahasiswa di tabel halaman utama dan dosen detail
+2. download file di halaman detail
